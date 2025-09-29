@@ -1,0 +1,5 @@
+﻿pandas>=2.0
+plotly>=5.22
+dash>=2.17
+streamlit>=1.37
+shiny>=0.6
