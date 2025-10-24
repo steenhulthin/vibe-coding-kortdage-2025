@@ -3,23 +3,84 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from typing import Optional
-
+import sys
+from math import atan, exp, pi
 import pandas as pd
 import plotly.express as px
 from dash import Dash, Input, Output, dcc, html
 from plotly.graph_objects import Figure
 
+APP_ROOT = Path(__file__).resolve().parent
+PYTHON_ROOT = APP_ROOT.parent
+if str(PYTHON_ROOT) not in sys.path:
+    sys.path.insert(0, str(PYTHON_ROOT))
+
 from utils.ssi_denmark import load_monthly_hospitalizations
 
-APP_ROOT = Path(__file__).resolve().parent
-DATA_ROOT = APP_ROOT.parents[1] / "data"
+DATA_ROOT = PYTHON_ROOT / "data"
 SSI_PATH = DATA_ROOT / "ssi_denmark" / "03_bekraeftede_tilfaelde_doede_indlagte_pr_dag_pr_koen.csv"
 GEOJSON_PATH = DATA_ROOT / "geo" / "denmark_regions_simple.geojson"
 
 
+def _mercator_to_lon_lat(x: float, y: float) -> tuple[float, float]:
+    radius = 6378137.0
+    lon = (x / radius) * 180 / pi
+    lat = (2 * atan(exp(y / radius)) - pi / 2) * 180 / pi
+    return lon, lat
+
+
+def _convert_ring(ring: list[list[float]]) -> list[list[float]]:
+    converted: list[list[float]] = []
+    for point in ring:
+        x, y = point[:2]
+        lon, lat = _mercator_to_lon_lat(x, y)
+        converted.append([lon, lat])
+    return converted
+
+
+def _convert_geometry(geometry: dict) -> dict:
+    geom_type = geometry.get("type")
+    coords = geometry.get("coordinates", [])
+    if geom_type == "Polygon":
+        geometry["coordinates"] = [_convert_ring(ring) for ring in coords]
+    elif geom_type == "MultiPolygon":
+        geometry["coordinates"] = [[_convert_ring(ring) for ring in polygon] for polygon in coords]
+    return geometry
+
+
 def load_geojson(path: Path) -> dict:
     with path.open(encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+
+    crs_name = data.get("crs", {}).get("properties", {}).get("name", "")
+    needs_projection_fix = "3857" in crs_name
+    for feature in data.get("features", []):
+        props = feature.setdefault("properties", {})
+        if needs_projection_fix:
+            feature["geometry"] = _convert_geometry(feature.get("geometry", {}))
+
+        props.setdefault(
+            "region_code",
+            str(
+                props.get("region_code")
+                or props.get("regionskode")
+                or props.get("REGIONCODE")
+                or props.get("regionscode")
+                or ""
+            ),
+        )
+        props.setdefault(
+            "region_name",
+            props.get("region_name")
+            or props.get("REGIONNAVN")
+            or props.get("regionnavn")
+            or props.get("regionsnavn")
+            or "",
+        )
+
+    data.pop("crs", None)
+    return data
+
 
 
 def prepare_dataset() -> pd.DataFrame:

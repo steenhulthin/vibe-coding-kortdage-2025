@@ -37,3 +37,9 @@
 35. Det kører fint på streamlit.app, men der sker ikke noget i stlite. Kan vi få en log, så vi har med muligheder for fejlfinding?
 36. Genstart alle webservere
 37. Jeg kan ikke se en log. Men lad det ligge for nuværende. Lad os få lavet en shiny eller dash app. Jeg vil gerne have en app med et kort over danmark inddelt i regioner. Kortet vise et timelapse over indlæggelser over tid baseret på det danske data. Tænker du Dash eller shiny til den opgave?
+38. Jeg får ModuleNotFoundError: No module named 'utils' når jeg kører python python/dash_app/app.py
+39. App'en finder ikke datafilen: FileNotFoundError: ... \vibe_coding\data\ssi_denmark\03_bekraeftede...csv
+40. Jeg har lagt regioner.geojson i python/data/. Brug den i stedet for demo-geojsonen.
+41. Lav en simplificeret geojson ud fra regioner.geojson (fjern ca. 90 % af punkterne) og brug den i Dash.
+42. Der vises en bounding box i Dash efter simplificering – juster simplificeringen så polygonerne bevares.
+43. Rul tilbage til den simple geojson i Dash, men gem begge nye geojson-filer.
