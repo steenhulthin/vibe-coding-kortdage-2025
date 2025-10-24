@@ -9,7 +9,7 @@ st.caption(
     "Periodevælgeren opsummerer værdier for kortet og tidsserien."
 )
 
-DATA_PATH = "python/data/owid_covid_global.csv"
+DATA_PATH = "python/data/owid_covid_global_monthly.csv"
 METRIC_COLUMNS = [
     "hosp_patients_per_million",
     "weekly_hosp_admissions_per_million",
@@ -21,10 +21,19 @@ METRIC_COLUMNS = [
 
 @st.cache_data
 def load_data(path: str) -> pd.DataFrame:
-    df = pd.read_csv(path, parse_dates=["date"])
+    df = pd.read_csv(path)
+
+    if "date" in df.columns:
+        df["date"] = pd.to_datetime(df["date"])
+    elif "month_start" in df.columns:
+        df["date"] = pd.to_datetime(df["month_start"])
+    else:
+        raise ValueError("Datasættet skal indeholde 'date' eller 'month_start'.")
+
     for col in METRIC_COLUMNS:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce")
+
     df["year_month"] = df["date"].dt.to_period("M")
     return df
 

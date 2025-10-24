@@ -70,7 +70,7 @@
               }
               return res.text();
             }),
-            fetch("python/data/owid_covid_global.csv").then((res) => {
+            fetch("python/data/owid_covid_global_monthly.csv").then((res) => {
               if (!res.ok) {
                 throw new Error(" kunne ikke hente OWID-datasættet");
               }
@@ -90,7 +90,7 @@
               ],
               files: {
                 "python/streamlit_app/app.py": appCode,
-                "python/data/owid_covid_global.csv": new Uint8Array(
+                "python/data/owid_covid_global_monthly.csv": new Uint8Array(
                   owidBuffer
                 ),
               },

@@ -24,3 +24,8 @@
 22. Ok, nu får jeg dog: Fejl under indlæsning: The `entrypoint` field is required.
 23. Hvor lang tid forventer du det tager at loade?
 24. Ok, vi skal måske tænke på stream.app hosting. Nå, kan du løbende tilføje mine prompts til prompts2codex? og lige tilføje de manglende i hvert fald.
+25. Nå, min computer gik ned (ikke relateret til projektet). Kan vi lave et datasæt til streamlit dashboardet, som er præaggregeret på månedsniveau?
+26. Ja, lad os se om det ikke bare er sagen. :) Og lad mig lige få commandoen til at serve stlite på den lokale webserver igen også.
+27. Husk at få tilføjet prompts til prompt-loggen. ;)
+28. Hm, det ser ud som om det hænger. bruger det det reducerede datasæt?
+29. ::ffff:127.0.0.1 - - [24/Oct/2025 19:32:43] "GET / HTTP/1.1" 200 - (::ffff:127.0.0.1 - - [24/Oct/2025 19:32:45] "GET /python/streamlit_app/app.py HTTP/1.1" 200 - ::ffff:127.0.0.1 - - [24/Oct/2025 19:32:45] "GET /python/data/owid_covid_global_monthly.csv HTTP/1.1" 200 - ::ffff:127.0.0.1 - - [24/Oct/2025 19:32:45] code 404, message File not found ::ffff:127.0.0.1 - - [24/Oct/2025 19:32:45] "GET /favicon.ico HTTP/1.1" 404 -)
