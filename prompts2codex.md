@@ -36,3 +36,4 @@
 34. Kan det tænkes at requirements ikke kommer korrekt med?
 35. Det kører fint på streamlit.app, men der sker ikke noget i stlite. Kan vi få en log, så vi har med muligheder for fejlfinding?
 36. Genstart alle webservere
+37. Jeg kan ikke se en log. Men lad det ligge for nuværende. Lad os få lavet en shiny eller dash app. Jeg vil gerne have en app med et kort over danmark inddelt i regioner. Kortet vise et timelapse over indlæggelser over tid baseret på det danske data. Tænker du Dash eller shiny til den opgave?

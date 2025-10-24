@@ -1,3 +1,6 @@
-﻿# Demo-script (kort)
-1) Streamlit (hurtig UI) → 2) Shiny (reaktivitet) → 3) Dash (komponenter)
-4) Power BI → 5) ArcGIS Dashboards
+# Demo-script (kort)
+1) Streamlit – globalt overblik (OWID)
+2) Shiny – reaktivt layout (WIP)
+3) Dash – Danmarkskort med månedsvis timelapse af indlæggelser
+4) Power BI
+5) ArcGIS Dashboards
