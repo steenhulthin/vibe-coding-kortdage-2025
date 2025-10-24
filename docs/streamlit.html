@@ -38,6 +38,22 @@
         font-size: 0.95rem;
         background: rgba(24, 31, 42, 0.85);
       }
+      #log {
+        margin: 0;
+        padding: 1rem 1.5rem;
+        background: rgba(13, 17, 23, 0.9);
+        border-top: 1px solid rgba(240, 246, 252, 0.08);
+        border-bottom: 1px solid rgba(240, 246, 252, 0.08);
+        font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        max-height: 220px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+      }
+      #log .error {
+        color: #ff7b72;
+      }
       #root {
         flex: 1 1 auto;
         min-height: 0;
@@ -53,16 +69,42 @@
       <p>Global COVID-19 indlæggelser og dødsfald (OWID)</p>
     </header>
     <div id="status">Indlæser dashboard…</div>
+    <div id="log" role="log" aria-live="polite"></div>
     <div id="root"></div>
     <script>
       (async () => {
         const statusEl = document.getElementById("status");
         const rootEl = document.getElementById("root");
+        const logEl = document.getElementById("log");
+
+        const writeLog = (message, level = "info") => {
+          const timestamp = new Date().toISOString();
+          const formatted = `[${timestamp}] ${message}`;
+
+          if (level === "error") {
+            console.error(formatted);
+          } else {
+            console.log(formatted);
+          }
+
+          if (logEl) {
+            const line = document.createElement("div");
+            line.textContent = formatted;
+            if (level === "error") {
+              line.classList.add("error");
+            }
+            logEl.appendChild(line);
+            logEl.scrollTop = logEl.scrollHeight;
+          }
+        };
+
         try {
+          writeLog("Initialiserer stlite-side");
           if (!window.stlite) {
             throw new Error("stlite-biblioteket blev ikke indlæst");
           }
 
+          writeLog("Henter Streamlit-app og datasæt");
           const [appCode, owidBuffer] = await Promise.all([
             fetch("python/streamlit_app/app.py").then((res) => {
               if (!res.ok) {
@@ -78,9 +120,10 @@
             }),
           ]);
 
+          writeLog("Filer hentet. Starter stlite...");
           statusEl.textContent = "Starter stlite…";
 
-          stlite.mount(
+          await stlite.mount(
             {
               entrypoint: "python/streamlit_app/app.py",
               requirements: [
@@ -98,11 +141,16 @@
             rootEl
           );
 
+          writeLog("stlite kører. Streamlit burde nu være klar.");
           statusEl.textContent = "Dashboard indlæst.";
           statusEl.style.display = "none";
         } catch (error) {
-          console.error(error);
-          statusEl.textContent = "Fejl under indlæsning: " + error.message;
+          const message = `Fejl under indlæsning: ${error.message}`;
+          writeLog(message, "error");
+          if (error.stack) {
+            writeLog(error.stack, "error");
+          }
+          statusEl.textContent = message;
           statusEl.style.background = "#8b3434";
         }
       })();

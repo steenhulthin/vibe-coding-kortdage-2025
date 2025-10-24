@@ -34,3 +34,5 @@
 32. Det starter ikke op i ghpages heller. Du lave startsiden, så den er ren html og har et link en side med stlite-delen.
 33. Jeg har prøvet at lave en https://vibe-coding-kortdage-2025.streamlit.app/ app men den giver følgende fejl: File "/mount/src/vibe-coding-kortdage-2025/python/streamlit_app/app.py", line 2, in <module> import plotly.graph_objects as go
 34. Kan det tænkes at requirements ikke kommer korrekt med?
+35. Det kører fint på streamlit.app, men der sker ikke noget i stlite. Kan vi få en log, så vi har med muligheder for fejlfinding?
+36. Genstart alle webservere
