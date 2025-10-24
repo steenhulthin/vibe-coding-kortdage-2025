@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Streamlit Dashboard (stlite)</title>
+    <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.75.0/build/stlite.js"></script>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: #0d1117;
+        color: #f0f6fc;
+      }
+      header {
+        padding: 1.2rem 1.5rem;
+        background: rgba(13, 17, 23, 0.95);
+        border-bottom: 1px solid rgba(240, 246, 252, 0.1);
+      }
+      header h1 {
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+      header p {
+        margin: 0.2rem 0 0;
+        color: rgba(240, 246, 252, 0.7);
+        font-size: 0.95rem;
+      }
+      #status {
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+        background: rgba(24, 31, 42, 0.85);
+      }
+      #root {
+        flex: 1 1 auto;
+        min-height: 0;
+      }
+      a {
+        color: #4dabf7;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Streamlit-dashboard · stlite</h1>
+      <p>Global COVID-19 indlæggelser og dødsfald (OWID)</p>
+    </header>
+    <div id="status">Indlæser dashboard…</div>
+    <div id="root"></div>
+    <script>
+      (async () => {
+        const statusEl = document.getElementById("status");
+        const rootEl = document.getElementById("root");
+        try {
+          if (!window.stlite) {
+            throw new Error("stlite-biblioteket blev ikke indlæst");
+          }
+
+          const [appCode, owidBuffer] = await Promise.all([
+            fetch("python/streamlit_app/app.py").then((res) => {
+              if (!res.ok) {
+                throw new Error(" kunne ikke hente streamlit-app'en");
+              }
+              return res.text();
+            }),
+            fetch("python/data/owid_covid_global.csv").then((res) => {
+              if (!res.ok) {
+                throw new Error(" kunne ikke hente OWID-datasættet");
+              }
+              return res.arrayBuffer();
+            }),
+          ]);
+
+          statusEl.textContent = "Starter stlite…";
+
+          stlite.mount(
+            {
+              entrypoint: "python/streamlit_app/app.py",
+              requirements: [
+                "streamlit==1.50.0",
+                "pandas==2.3.3",
+                "plotly==6.3.1",
+              ],
+              files: {
+                "python/streamlit_app/app.py": appCode,
+                "python/data/owid_covid_global.csv": new Uint8Array(
+                  owidBuffer
+                ),
+              },
+            },
+            rootEl
+          );
+
+          statusEl.textContent = "Dashboard indlæst.";
+          statusEl.style.display = "none";
+        } catch (error) {
+          console.error(error);
+          statusEl.textContent = "Fejl under indlæsning: " + error.message;
+          statusEl.style.background = "#8b3434";
+        }
+      })();
+    </script>
+  </body>
+</html>
