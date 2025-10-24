@@ -11,3 +11,5 @@ Thumbs.db
 .DS_Store
 # Power BI
 *.pbix.lock
+# Data archives
+python/data/ssi_denmark_data.zip
