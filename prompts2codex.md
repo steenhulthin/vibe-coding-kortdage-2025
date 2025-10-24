@@ -31,3 +31,4 @@
 29. ::ffff:127.0.0.1 - - [24/Oct/2025 19:32:43] "GET / HTTP/1.1" 200 - (::ffff:127.0.0.1 - - [24/Oct/2025 19:32:45] "GET /python/streamlit_app/app.py HTTP/1.1" 200 - ::ffff:127.0.0.1 - - [24/Oct/2025 19:32:45] "GET /python/data/owid_covid_global_monthly.csv HTTP/1.1" 200 - ::ffff:127.0.0.1 - - [24/Oct/2025 19:32:45] code 404, message File not found ::ffff:127.0.0.1 - - [24/Oct/2025 19:32:45] "GET /favicon.ico HTTP/1.1" 404 -)
 30. Ok, der sker ikke noget. Men prøv at pushe til begge remotes. Jeg har slået ghpages til, så måske fungerer det der.
 31. Drevet var blevet disconnected. Tilføj lige prompt logs, commit og push igen.
+32. Det starter ikke op i ghpages heller. Du lave startsiden, så den er ren html og har et link en side med stlite-delen.
