@@ -32,3 +32,5 @@
 30. Ok, der sker ikke noget. Men prøv at pushe til begge remotes. Jeg har slået ghpages til, så måske fungerer det der.
 31. Drevet var blevet disconnected. Tilføj lige prompt logs, commit og push igen.
 32. Det starter ikke op i ghpages heller. Du lave startsiden, så den er ren html og har et link en side med stlite-delen.
+33. Jeg har prøvet at lave en https://vibe-coding-kortdage-2025.streamlit.app/ app men den giver følgende fejl: File "/mount/src/vibe-coding-kortdage-2025/python/streamlit_app/app.py", line 2, in <module> import plotly.graph_objects as go
+34. Kan det tænkes at requirements ikke kommer korrekt med?
