@@ -284,62 +284,57 @@ for code, name in region_pairs:
     REGION_CHOICES[str(code)] = name
 
 
-app_ui = ui.page_fluid(
-    ui.h2("COVID-19 regionalt overblik"),
+app_ui = ui.page_sidebar(
+    ui.sidebar(
+        ui.h4("Kontroller"),
+        ui.input_select(
+            "metric",
+            "Nøgletal",
+            choices={key: meta["label"] for key, meta in METRICS.items()},
+            selected="hospitalizations",
+        ),
+        ui.input_slider(
+            "selected_date",
+            "Dato",
+            min=DATE_MIN,
+            max=DATE_MAX,
+            value=DATE_MAX,
+            step=timedelta(days=1),
+        ),
+        ui.input_select(
+            "region",
+            "Region (detaljer)",
+            choices=REGION_CHOICES,
+            selected="ALL",
+        ),
+        ui.help_text(
+            "Kortet viser 7-dages summen pr. region for den valgte dato. "
+            "Tidsserien opdateres efter nøgletal og region."
+        ),
+        width=320,
+    ),
     ui.layout_columns(
         ui.column(
-            3,
-            ui.card(
-                ui.input_select(
-                    "metric",
-                    "Nøgletal",
-                    choices={key: meta["label"] for key, meta in METRICS.items()},
-                    selected="hospitalizations",
-                ),
-                ui.input_slider(
-                    "selected_date",
-                    "Dato",
-                    min=DATE_MIN,
-                    max=DATE_MAX,
-                    value=DATE_MAX,
-                    step=timedelta(days=1),
-                ),
-                ui.input_select(
-                    "region",
-                    "Region (detaljer)",
-                    choices=REGION_CHOICES,
-                    selected="ALL",
-                ),
-                ui.help_text(
-                    "Kortet viser 7-dages summen pr. region for den valgte dato. "
-                    "Tidsserien opdateres efter nøgletal og region."
-                ),
-            ),
-        ),
-        ui.column(
-            9,
+            7,
             ui.card(
                 ui.card_header("Kort"),
                 output_widget("region_map"),
             ),
-            ui.layout_columns(
-                ui.column(
-                    4,
-                    ui.card(
-                        ui.card_header("Seneste tal"),
-                        ui.output_ui("metric_summary"),
-                    ),
-                ),
-                ui.column(
-                    8,
-                    ui.card(
-                        ui.card_header("Udvikling"),
-                        output_widget("metric_timeseries"),
-                    ),
-                ),
+        ),
+        ui.column(
+            5,
+            ui.card(
+                ui.card_header("Seneste tal"),
+                ui.output_ui("metric_summary"),
+            ),
+            ui.card(
+                ui.card_header("Udvikling"),
+                output_widget("metric_timeseries"),
             ),
         ),
     ),
+    title="COVID-19 regionalt overblik",
+    fillable=True,
 )
 
 
