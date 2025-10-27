@@ -43,3 +43,5 @@
 41. Lav en simplificeret geojson ud fra regioner.geojson (fjern ca. 90 % af punkterne) og brug den i Dash.
 42. Der vises en bounding box i Dash efter simplificering – juster simplificeringen så polygonerne bevares.
 43. Rul tilbage til den simple geojson i Dash, men gem begge nye geojson-filer.
+44. Brug regioner_simplified.geojson igen (den skal matche SSI-data og ikke vise bounding box).
+45. Lav en denmark_regions.geojson med samme struktur som den simple fil men med geometrier fra regioner_simplified, og brug den i Dash.
