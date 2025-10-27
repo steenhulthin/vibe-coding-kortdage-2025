@@ -313,25 +313,28 @@ app_ui = ui.page_sidebar(
         ),
         width=320,
     ),
-    ui.layout_columns(
-        ui.column(
-            7,
-            ui.card(
-                ui.card_header("Kort"),
-                output_widget("region_map"),
+    ui.div(
+        ui.layout_columns(
+            ui.column(
+                9,
+                ui.card(
+                    ui.card_header("Kort"),
+                    output_widget("region_map"),
+                ),
+            ),
+            ui.column(
+                3,
+                ui.card(
+                    ui.card_header("Seneste tal"),
+                    ui.output_ui("metric_summary"),
+                ),
             ),
         ),
-        ui.column(
-            5,
-            ui.card(
-                ui.card_header("Seneste tal"),
-                ui.output_ui("metric_summary"),
-            ),
-            ui.card(
-                ui.card_header("Udvikling"),
-                output_widget("metric_timeseries"),
-            ),
+        ui.card(
+            ui.card_header("Udvikling"),
+            output_widget("metric_timeseries"),
         ),
+        class_="main-content",
     ),
     title="COVID-19 regionalt overblik",
     fillable=True,

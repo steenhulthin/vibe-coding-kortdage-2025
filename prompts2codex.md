@@ -50,3 +50,4 @@
 48. Husk også at opdatere prompts2codex.md filen.
 49. Start med at bruge denmark_regions_simple.geojson til kortet.
 50. Brug en shinypy version der understøtter sidebar og opdater layoutet derefter.
+51. Sørg for at hoveddelen fylder resten, kortet (med seneste tal til højre) og grafen under med fuld bredde.
