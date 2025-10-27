@@ -183,6 +183,8 @@ def _build_timeseries_figure(
     df: pd.DataFrame,
     metric_key: str,
     region_code: str,
+    *,
+    selected_date: pd.Timestamp | None = None,
 ) -> go.Figure:
     metric_meta = METRICS[metric_key]
     data = df.sort_values("date").copy()
@@ -220,6 +222,24 @@ def _build_timeseries_figure(
         customdata=hover_dates,
         hovertemplate="%{customdata}<br>7 dage: %{y:,.0f}<extra></extra>",
     )
+    if selected_date is not None:
+        selected_str = pd.Timestamp(selected_date).strftime("%Y-%m-%d")
+        hover_str = pd.Timestamp(selected_date).strftime("%d-%m-%Y")
+        y_lower = min(0, grouped["value"].min(), grouped["rolling"].min())
+        y_upper = max(grouped["value"].max(), grouped["rolling"].max())
+        fig.add_trace(
+            go.Scatter(
+                x=[selected_str, selected_str],
+                y=[y_lower, y_upper],
+                mode="lines",
+                line=dict(color="#444", dash="dash", width=2),
+                name="Valgt dato",
+                hoverinfo="text",
+                text=[hover_str, hover_str],
+                showlegend=False,
+            )
+        )
+
     fig.update_layout(
         title=title,
         margin=dict(l=10, r=10, t=50, b=40),
@@ -358,9 +378,15 @@ def server(input, output, session):
     def metric_timeseries():
         metric = input.metric()
         region_code = input.region()
+        selected_date = pd.Timestamp(input.selected_date())
         metric_df = filtered_dataset()
         req(not metric_df.empty)
-        fig = _build_timeseries_figure(metric_df, metric, region_code)
+        fig = _build_timeseries_figure(
+            metric_df,
+            metric,
+            region_code,
+            selected_date=selected_date,
+        )
         return fig
 
 app = App(app_ui, server)
