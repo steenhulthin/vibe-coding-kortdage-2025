@@ -199,21 +199,26 @@ def _build_timeseries_figure(
         grouped["rolling"] = grouped["value"].rolling(window=7, min_periods=1).sum()
         title = f"{metric_meta['label']} - {region_name}"
 
+    display_dates = grouped["date"].dt.strftime("%Y-%m-%d")
+    hover_dates = grouped["date"].dt.strftime("%d-%m-%Y")
+
     fig = go.Figure()
     fig.add_bar(
-        x=grouped["date"],
+        x=display_dates,
         y=grouped["value"],
         name="Daglig",
         marker_color="#1f77b4",
-        hovertemplate="%{x|%d-%m-%Y}<br>Daglig: %{y:,.0f}<extra></extra>",
+        customdata=hover_dates,
+        hovertemplate="%{customdata}<br>Daglig: %{y:,.0f}<extra></extra>",
     )
     fig.add_scatter(
-        x=grouped["date"],
+        x=display_dates,
         y=grouped["rolling"],
         name="7 dage",
         mode="lines",
         line=dict(color="#d62728", width=3),
-        hovertemplate="%{x|%d-%m-%Y}<br>7 dage: %{y:,.0f}<extra></extra>",
+        customdata=hover_dates,
+        hovertemplate="%{customdata}<br>7 dage: %{y:,.0f}<extra></extra>",
     )
     fig.update_layout(
         title=title,
@@ -314,21 +319,9 @@ app_ui = ui.page_sidebar(
         width=320,
     ),
     ui.div(
-        ui.layout_columns(
-            ui.column(
-                9,
-                ui.card(
-                    ui.card_header("Kort"),
-                    output_widget("region_map"),
-                ),
-            ),
-            ui.column(
-                3,
-                ui.card(
-                    ui.card_header("Seneste tal"),
-                    ui.output_ui("metric_summary"),
-                ),
-            ),
+        ui.card(
+            ui.card_header("Kort"),
+            output_widget("region_map"),
         ),
         ui.card(
             ui.card_header("Udvikling"),
@@ -369,23 +362,5 @@ def server(input, output, session):
         req(not metric_df.empty)
         fig = _build_timeseries_figure(metric_df, metric, region_code)
         return fig
-
-    @render.ui
-    def metric_summary():
-        metric = input.metric()
-        region_code = input.region()
-        selected_date = pd.Timestamp(input.selected_date())
-        summary = _compute_summary(
-            filtered_dataset(),
-            metric,
-            region_code,
-            selected_date,
-        )
-        return ui.div(
-            ui.h4(summary["title"]),
-            ui.p(summary["daily"]),
-            ui.p(summary["rolling"]),
-        )
-
 
 app = App(app_ui, server)
