@@ -45,3 +45,7 @@
 43. Rul tilbage til den simple geojson i Dash, men gem begge nye geojson-filer.
 44. Brug regioner_simplified.geojson igen (den skal matche SSI-data og ikke vise bounding box).
 45. Lav en denmark_regions.geojson med samme struktur som den simple fil men med geometrier fra regioner_simplified, og brug den i Dash.
+46. Jeg vil gerne have noget, hvor et kort over data er det centrale.
+47. Det lyder godt, generér koden.
+48. Husk også at opdatere prompts2codex.md filen.
+49. Start med at bruge denmark_regions_simple.geojson til kortet.
