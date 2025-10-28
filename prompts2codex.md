@@ -56,3 +56,5 @@
 54. Tilføj en lodret linje i grafen, der følger den valgte dato.
 55. Udbyg ArcGIS scenen til månedlige data, brug vector-tile light gray basemap og publicér via propy.
 56. Opdater prompt-loggen. Den skal være gemt i UTF-8.
+57. Opdater logs, commit og push begge remotes.
+

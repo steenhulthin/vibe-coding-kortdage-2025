@@ -228,3 +228,108 @@ User:
 
 ## My request for Codex:
 Opdatér prompts.md løbende.
+Assistant:
+prompts.md is refreshed with the full conversation to date (user + Codex messages in order) and saved in UTF-8, so it’s ready to keep extending as we go. Add/commit whenever you’re ready.
+
+User:
+# Context from my IDE setup:
+
+## Active file: prompts.md
+
+## Open tabs:
+- agents.md: agents.md
+- create_nordic_covid_scene.py: arcgis/dashboards/create_nordic_covid_scene.py
+- prompts.md: prompts.md
+- prompts2codex.md: prompts2codex.md
+- app.py: python/shiny_app/app.py
+
+## My request for Codex:
+ok, vil du lave punkt 1
+
+Assistant:
+Swapped the web-scene upload to use the ArcGIS API’s `text=` parameter instead of `data=` so the JSON stays intact when you rerun the script (`arcgis/dashboards/create_nordic_covid_scene.py:185`). This avoids Scene Viewer getting a null payload and restores the `version` field. Next step: run the script again with `propy` so the hosted scene is republished with the fixed JSON.
+
+User:
+# Context from my IDE setup:
+
+## Active file: arcgis/dashboards/create_nordic_covid_scene.py
+
+## Open tabs:
+- create_nordic_covid_scene.py: arcgis/dashboards/create_nordic_covid_scene.py
+- prompts.md: prompts.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+commit og push. derefter:
+
+Der er et problem med basemappet. Der er tilsyneladende ikke basemap til scenes i 4326 projektion. Hvad er standard projektion af basemaps for scenes? Det er ikke super vigtigt lige nu, men det ville da være fint, hvis der var basemaps.
+
+Assistant:
+- Committed `Fix web scene upload payload` and pushed `trunk` to both `github` and `origin`; `git status` is clean.
+
+Basemap note: ArcGIS Online web scenes expect their basemap tiling scheme in WGS 84 Web Mercator Auxiliary Sphere (WKID 3857/102100). When the scene’s `spatialReference` is left at 4326, Scene Viewer disables those standard basemap services because the tiling grids don’t match, so you end up with no basemap at all. Switch the scene JSON to 3857 (and let ArcGIS reproject your feature layer on the fly) or publish a local scene with a custom 4326-compatible basemap if you truly need geographic coordinates.
+
+User:
+# Context from my IDE setup:
+
+## Active file: arcgis/dashboards/create_nordic_covid_scene.py
+
+## Open tabs:
+- create_nordic_covid_scene.py: arcgis/dashboards/create_nordic_covid_scene.py
+- prompts.md: prompts.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Kan du sørge for at data bliver projiceret create_nordic_scene.py?
+Assistant:
+Projected the Nordic geometries to Web Mercator so the scene can use tiled basemaps.
+
+- `arcgis/dashboards/create_nordic_covid_scene.py:31-34` adds spatial-reference constants and helper utilities (`_project_geometries_to_web_mercator`, `_lonlat_to_web_mercator`) så Living Atlas polygons and camera positions are reprojected til WKID 3857.
+- `arcgis/dashboards/create_nordic_covid_scene.py:159-175` now writes feature records with Web Mercator metadata and `_build_web_scene_json` outputs WKID 3857, ensuring basemaps load i Scene Viewer (`arcgis/dashboards/create_nordic_covid_scene.py:321-365`).
+- `arcgis/dashboards/create_nordic_covid_scene.py:428-450` projects the Living Atlas polygons before publishing og gemmer laget i Web Mercator.
+
+`prompts.md` is updated med dagens udvekslinger.
+
+Next steps: 1. Rerun `%Userprofile%\AppData\Local\Programs\ArcGIS\Pro\bin\Python\Scripts\propy.bat arcgis\dashboards\create_nordic_covid_scene.py` for at overskrive hosted layer + scene, 2. Åbn scenen for at bekræfte, at Light Gray basemappet vises (ikke kørt her).
+
+User:
+# Context from my IDE setup:
+
+## Active file: arcgis/dashboards/create_nordic_covid_scene.py
+
+## Open tabs:
+- create_nordic_covid_scene.py: arcgis/dashboards/create_nordic_covid_scene.py
+- prompts.md: prompts.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg får følgende fejl:
+Traceback (most recent call last):
+  File "C:\Users\b246800\Documents\prj\vibe_coding\arcgis\dashboards\create_nordic_covid_scene.py", line 463, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\b246800\Documents\prj\vibe_coding\arcgis\dashboards\create_nordic_covid_scene.py", line 456, in main
+    _create_or_update_web_scene(gis, FOLDER_NAME, scene_json)
+  File "C:\Users\b246800\Documents\prj\vibe_coding\arcgis\dashboards\create_nordic_covid_scene.py", line 392, in _create_or_update_web_scene
+    scene_item.update(item_properties=item_props, text=scene_data)
+TypeError: Item.update() got an unexpected keyword argument 'text'
+
+User:
+# Context from my IDE setup:
+
+## Active file: arcgis/dashboards/create_nordic_covid_scene.py
+
+## Open tabs:
+- create_nordic_covid_scene.py: arcgis/dashboards/create_nordic_covid_scene.py
+- prompts.md: prompts.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+ok. Der er en scene med baggrund. Lad det være det for i dag. opdatér logs og commit og push til begge remotes.
+Assistant:
+Projicerede scenedata til Web Mercator og tilføjede ArcGIS API-fallback, så scenen kan publiceres med Light Gray basemap uden fejl.
+- `arcgis/dashboards/create_nordic_covid_scene.py:31-34,105-175,321-366,392-414` tilføjer Web Mercator-konstanter, projicerer Living Atlas-geometrier, opdaterer kameraet og falder tilbage til fil-upload når `text` ikke understøttes.
+- `prompts2codex.md:57` og `prompts.md` er opdateret med dagens prompts/logs.
+- Commit `Project Nordic scene to Web Mercator` er pushet til både `github` og `origin`.
+
+Next steps: Ingen yderligere handling nødvendig, medmindre du vil tweake scenen yderligere.

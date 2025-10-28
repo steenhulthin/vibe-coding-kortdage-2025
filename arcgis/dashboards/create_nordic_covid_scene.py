@@ -19,12 +19,20 @@ from __future__ import annotations
 
 import json
 from datetime import timezone
+import math
+import tempfile
 from pathlib import Path
 from typing import Dict, Iterable, List
 
 import pandas as pd
 from arcgis.features import FeatureLayer
 from arcgis.gis import GIS
+from arcgis.geometry import project
+
+WGS84_WKID = 4326
+WEB_MERCATOR_WKID = 3857
+WGS84_SPATIAL_REFERENCE = {"wkid": WGS84_WKID}
+WEB_MERCATOR_SPATIAL_REFERENCE = {"wkid": WEB_MERCATOR_WKID}
 
 NORDIC_COUNTRIES = ["Denmark", "Sweden", "Norway", "Finland", "Iceland"]
 FOLDER_NAME = "kortdage_2025"
@@ -77,7 +85,7 @@ def _load_country_geometries(layer: FeatureLayer) -> Dict[str, Dict[str, object]
         where=where_clause,
         out_fields=name_field,
         return_geometry=True,
-        out_sr={"wkid": 4326},
+        out_sr=WGS84_SPATIAL_REFERENCE,
         result_record_count=len(NORDIC_COUNTRIES),
         max_allowable_offset=0.05,
         geometry_precision=5,
@@ -93,6 +101,45 @@ def _load_country_geometries(layer: FeatureLayer) -> Dict[str, Dict[str, object]
     if missing:
         raise RuntimeError(f"Missing geometries for: {', '.join(sorted(missing))}")
     return geometries
+
+
+def _project_geometries_to_web_mercator(
+    geometries: Dict[str, Dict[str, object]], gis: GIS
+) -> Dict[str, Dict[str, object]]:
+    """Project country polygons to Web Mercator to align with 3D basemap tiling."""
+    country_order = list(geometries.keys())
+    geometry_payload = []
+    for country in country_order:
+        geom = dict(geometries[country])
+        geom.setdefault("spatialReference", WGS84_SPATIAL_REFERENCE)
+        geometry_payload.append(geom)
+
+    projected = project(
+        geometries=geometry_payload,
+        in_sr=WGS84_SPATIAL_REFERENCE,
+        out_sr=WEB_MERCATOR_SPATIAL_REFERENCE,
+        gis=gis,
+    )
+
+    if not projected or len(projected) != len(country_order):
+        raise RuntimeError("Failed to project country geometries to Web Mercator.")
+
+    projected_geometries: Dict[str, Dict[str, object]] = {}
+    for country, geom in zip(country_order, projected):
+        geom_dict = geom.to_dict() if hasattr(geom, "to_dict") else dict(geom)
+        geom_dict.setdefault("spatialReference", WEB_MERCATOR_SPATIAL_REFERENCE)
+        projected_geometries[country] = geom_dict
+
+    return projected_geometries
+
+
+def _lonlat_to_web_mercator(lon: float, lat: float) -> Dict[str, float]:
+    """Convert geographic lon/lat to Web Mercator meters for camera positioning."""
+    clamped_lat = max(min(lat, 89.9999), -89.9999)
+    rad_lat = math.radians(clamped_lat)
+    x = math.radians(lon) * 6378137.0
+    y = math.log(math.tan((math.pi / 4.0) + (rad_lat / 2.0))) * 6378137.0
+    return {"x": x, "y": y}
 
 
 def _load_covid_data(data_path: Path) -> pd.DataFrame:
@@ -114,7 +161,8 @@ def _build_feature_records(df: pd.DataFrame, geometries: Dict[str, Dict[str, obj
     records: List[dict] = []
     for _, row in df.iterrows():
         location = row["location"]
-        geometry = geometries[location]
+        geometry = dict(geometries[location])
+        geometry.setdefault("spatialReference", WEB_MERCATOR_SPATIAL_REFERENCE)
         ts_ms = int(row["date"].timestamp() * 1000)
         records.append(
             {
@@ -271,10 +319,18 @@ def _build_web_scene_json(layer: FeatureLayer, time_extent: Dict[str, int], max_
         }
     }
 
+    camera_xy = _lonlat_to_web_mercator(15.0, 63.5)
+    camera_position = {
+        "x": camera_xy["x"],
+        "y": camera_xy["y"],
+        "z": 3500000.0,
+        "spatialReference": WEB_MERCATOR_SPATIAL_REFERENCE,
+    }
+
     initial_state = {
         "viewpoint": {
             "camera": {
-                "position": {"x": 15.0, "y": 63.5, "z": 3500000.0, "spatialReference": {"wkid": 4326}},
+                "position": camera_position,
                 "heading": 20.0,
                 "tilt": 48.0,
             }
@@ -307,7 +363,7 @@ def _build_web_scene_json(layer: FeatureLayer, time_extent: Dict[str, int], max_
         "applicationProperties": application_properties,
         "initialState": initial_state,
         "elevationExaggeration": 1,
-        "spatialReference": {"wkid": 4326},
+        "spatialReference": WEB_MERCATOR_SPATIAL_REFERENCE,
         "version": "1.13",
         "viewingMode": "global",
     }
@@ -334,9 +390,28 @@ def _create_or_update_web_scene(gis: GIS, folder: str, scene_json: dict) -> None
 
     if existing:
         scene_item = existing[0]
-        scene_item.update(item_properties=item_props, text=scene_data)
+        try:
+            scene_item.update(item_properties=item_props, text=scene_data)
+        except TypeError:
+            scene_item.update(item_properties=item_props)
+            with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, encoding="utf-8") as tmp:
+                tmp.write(scene_data)
+                temp_path = tmp.name
+            try:
+                scene_item.update(data=temp_path)
+            finally:
+                Path(temp_path).unlink(missing_ok=True)
     else:
-        gis.content.add(item_properties=item_props, text=scene_data, folder=folder)
+        try:
+            gis.content.add(item_properties=item_props, text=scene_data, folder=folder)
+        except TypeError:
+            with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, encoding="utf-8") as tmp:
+                tmp.write(scene_data)
+                temp_path = tmp.name
+            try:
+                gis.content.add(item_properties=item_props, data=temp_path, folder=folder)
+            finally:
+                Path(temp_path).unlink(missing_ok=True)
 
 
 def _connect_gis() -> GIS:
@@ -372,18 +447,15 @@ def main() -> int:
 
     living_atlas_layer = _resolve_living_atlas_layer(gis)
     print("Resolved Living Atlas layer:", living_atlas_layer.url)
-    sr_attr = getattr(living_atlas_layer.properties, "spatialReference", None)
-    if sr_attr and hasattr(sr_attr, "wkid"):
-        spatial_reference = {"wkid": sr_attr.wkid}
-    else:
-        spatial_reference = {"wkid": 4326}
     country_geoms = _load_country_geometries(living_atlas_layer)
     print("Loaded geometries for:", ", ".join(sorted(country_geoms)))
+    projected_country_geoms = _project_geometries_to_web_mercator(country_geoms, gis)
+    print("Projected geometries to Web Mercator.")
 
     data_path = Path(__file__).resolve().parents[2] / "python" / "data" / "owid_covid_global.csv"
     deaths_df = _load_covid_data(data_path)
     print("Loaded deaths rows:", len(deaths_df))
-    feature_records = _build_feature_records(deaths_df, country_geoms)
+    feature_records = _build_feature_records(deaths_df, projected_country_geoms)
     print("Prepared feature records:", len(feature_records))
 
     start_ts = int(deaths_df["date"].min().timestamp() * 1000)
@@ -394,7 +466,7 @@ def main() -> int:
         gis,
         FOLDER_NAME,
         feature_records,
-        spatial_reference=spatial_reference,
+        spatial_reference=WEB_MERCATOR_SPATIAL_REFERENCE,
         time_extent=time_extent,
     )
     print("Hosted feature layer ready:", feature_layer.url)
