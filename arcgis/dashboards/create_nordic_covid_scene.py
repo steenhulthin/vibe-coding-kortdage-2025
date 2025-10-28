@@ -21,7 +21,6 @@ import json
 from datetime import timezone
 from pathlib import Path
 from typing import Dict, Iterable, List
-import tempfile
 
 import pandas as pd
 from arcgis.features import FeatureLayer
@@ -332,17 +331,12 @@ def _create_or_update_web_scene(gis: GIS, folder: str, scene_json: dict) -> None
         ),
     }
     scene_data = json.dumps(scene_json)
-    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, encoding="utf-8") as tmp:
-        tmp.write(scene_data)
-        temp_path = tmp.name
-    try:
-        if existing:
-            scene_item = existing[0]
-            scene_item.update(item_properties=item_props, data=temp_path)
-        else:
-            gis.content.add(item_properties=item_props, data=temp_path, folder=folder)
-    finally:
-        Path(temp_path).unlink(missing_ok=True)
+
+    if existing:
+        scene_item = existing[0]
+        scene_item.update(item_properties=item_props, text=scene_data)
+    else:
+        gis.content.add(item_properties=item_props, text=scene_data, folder=folder)
 
 
 def _connect_gis() -> GIS:
