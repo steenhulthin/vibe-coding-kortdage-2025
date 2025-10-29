@@ -368,3 +368,69 @@ User:
 
 ## My request for Codex:
 opdatér logs og commit og push
+User:
+# Context from my IDE setup:
+
+## Active file: prompts2codex.md
+
+## Open tabs:
+- create_nordic_covid_scene.py: arcgis/dashboards/create_nordic_covid_scene.py
+- nordic_population_2022.csv: python/data/nordic_population_2022.csv
+- prompts.md: prompts.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg har redigeret lidt på scenen og lavet en til scene. Jeg er tilfreds med scenerne og den måde de fungerer med timeslideren. Nu vil jeg gerne have scenen embeddet i et dashboard eller en experience builder, hvor jeg kan bruge slideren. I dashboardet eller experience builderen skal der også være en overskrift og et sted med beskrivelse af data og reference til datakilderne.
+Assistant:
+Skitserede tre strategier: (1) programmatisk ArcGIS Dashboard, (2) Experience Builder med manuelle widgets, (3) statisk embed-side på GitHub Pages med HTML/iframe og kildeafsnit.
+
+User:
+# Context from my IDE setup:
+
+## Active file: prompts2codex.md
+
+## Open tabs:
+- create_nordic_covid_scene.py: arcgis/dashboards/create_nordic_covid_scene.py
+- nordic_population_2022.csv: python/data/nordic_population_2022.csv
+- prompts.md: prompts.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg er ikke sikker på tilgang 1 er så god. api'et er deprecated: https://developers.arcgis.com/python/latest/api-reference/arcgis.apps.dashboard.html . Hvad tænker du? Lav ikke kode. Lad mig bare høre din plan.
+Assistant:
+Frarådede det udfasede dashboard-API og foreslog tre alternativer: dokumenteret Experience Builder-opsætning, automatiseret Instant App (3D Viewer) via REST, eller en statisk landing page med scene-iframe.
+
+User:
+# Context from my IDE setup:
+
+## Active file: prompts.md
+
+## Active selection of the file:
+%Userprofile%\AppData\Local\Programs\ArcGIS\Pro\bin\Python\Scripts\propy.bat arcgis\dashboards\create_nordic_covid_scene.py
+## Open tabs:
+- create_nordic_covid_scene.py: arcgis/dashboards/create_nordic_covid_scene.py
+- nordic_population_2022.csv: python/data/nordic_population_2022.csv
+- prompts.md: prompts.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Lad os prøve mulighed 3 (statisk side hostet på ghpages). Husk også at få opdateret prompt logs.
+Assistant:
+Lagde en plan: (1) oprette `docs/scene.html` med titel, beskrivelse, kildeliste og iframe-konfiguration, (2) beskrive hvordan man vedligeholder den i `docs/README.md`, (3) linke fra landingssiden og opdatere prompt-logs efterfølgende.
+User:
+# Context from my IDE setup:
+
+## Active file: prompts.md
+
+## Active selection of the file:
+%Userprofile%\AppData\Local\Programs\ArcGIS\Pro\bin\Python\Scripts\propy.bat arcgis\dashboards\create_nordic_covid_scene.py
+## Open tabs:
+- create_nordic_covid_scene.py: arcgis/dashboards/create_nordic_covid_scene.py
+- nordic_population_2022.csv: python/data/nordic_population_2022.csv
+- prompts.md: prompts.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Det ser godt ud, men tilføj også et link fra docs/index.html til docs/scene.html .
+Assistant:
+Implementerede den statiske sceneside (`docs/scene.html`) med konfigurerbar embed, opdaterede `docs/index.html` med et link, dokumenterede vedligeholdelse i `docs/README.md` og ajourførte prompt-loggene.
