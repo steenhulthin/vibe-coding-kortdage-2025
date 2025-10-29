@@ -69,3 +69,4 @@
 67. Opdater scene-siden til at bruge Instant App 3D Viewer (eller Scene Viewer fallback) og log ændringen.
 68. Afklar Power BI-licenser, publicering og map-visuals (slået fra i desktop).
 69. Forsøg med Power BI Filled Map og manglende farve/slicer-felter; beslutning om at publicere trods begrænsninger.
+70. Eksportér Shiny-dashboard til Shinylive, link fra index og opdater dokumentation/logs.

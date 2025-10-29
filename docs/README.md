@@ -12,3 +12,10 @@
 - Tilpas `title`, `description`, `sourcesIntro` og listen `sources` for at ændre tekst og kildereferencer, fx hvis scenen eller datasættet skiftes ud.
 - Hvis du sætter `instantAppUrl`, indlæses den direkte (fx Instant App 3D Viewer). Uden den falder siden tilbage til Scene Viewer embed (`https://www.arcgis.com/apps/sceneviewer/index.html?webscene=...&embed=1`).
 - Living Atlas-referencen peger på FeatureServer-endpointet `https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries_(Generalized)/FeatureServer`. Hvis datasættet skifter, opdater både linket og feltet i `SCENE_CONFIG.sources`.
+
+## Shiny dashboard (`shiny_app/`)
+
+- Genereret med `shinylive export python/shiny_app docs/shiny_app`.
+- Gentag eksporten, når kildeappen ændres: `shinylive export python/shiny_app docs/shiny_app`.
+- Kører lokalt med `python -m http.server --directory docs/shiny_app` → åbne `http://localhost:8000/shiny_app/index.html`.
+- Appen bruger de samme SSI/geojson-data som Python-versionen; Shinylive-pakken indlæser dem automatisk fra den statiske export.
