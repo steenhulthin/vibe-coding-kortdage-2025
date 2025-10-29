@@ -865,3 +865,16 @@ User:
 Kan du lave et udkast evt med tabeller i en markdown fil (kald den pros_cons.md)
 Assistant:
 Oprettede `pros_cons.md` med en sammenligningstabel over Shiny, Dash, Streamlit, ArcGIS 3D og Power BI (parametre: opsætningshastighed, AI-assistance, deployment m.m.) og gemte den i UTF-8.
+User:
+# Context from my IDE setup:
+
+## Open tabs:
+- prompts.md: prompts.md
+- prompts2codex.md: prompts2codex.md
+- todo.md: todo.md
+- pros_cons.md: pros_cons.md
+
+## My request for Codex:
+Jeg tror, vi må sætte Power BI i mindre god på Opsætningshastighed og AI-assistance i forhold til vibe-coding. Drop også rækken med Visuel fleksibilitet.
+Assistant:
+Justering: Power BI markeret som **mindre god** på opsætningshastighed/AI-assistance, fjernet rækken "Visuel fleksibilitet" og genopdateret `pros_cons.md`.

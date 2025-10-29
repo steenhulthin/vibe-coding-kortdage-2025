@@ -74,3 +74,4 @@
 72. Opret `todo.md` i roden med næste skridt (geometrier, forsider, licens, hosting m.m.).
 73. Tilføj CC BY-NC-SA 4.0 licens og markér TODO-punktet som udført.
 74. Opret pros_cons.md med AI-fokuseret sammenligning af Shiny, Dash, Streamlit, ArcGIS 3D og Power BI.
+75. Juster pros_cons.md: Power BI som mindre god (opsætning/AI) og fjern visuel fleksibilitet.
