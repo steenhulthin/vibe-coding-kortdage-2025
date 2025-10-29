@@ -810,3 +810,58 @@ User:
 overstreg punktet i todo (altså i markdown - punktet skal ikke slettes, bare overstreges).
 Assistant:
 Markerede TODO-punktet om licens som gennemført med markdown-~~overstregning og opdaterede prompt-loggen.
+User:
+# Context from my IDE setup:
+
+## Active file: todo.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+- app.py: python/shiny_app/app.py
+- todo.md: todo.md
+
+## My request for Codex:
+Kan du se på punkt 6. kom med forslag til hvilke parametre, der skal vurderes fordele og ulemper på. Stil 2-3 spørgsmål til mig inden du kommer med forslaget.
+Assistant:
+Indhentede præciseringer om hvilke teknologier, fokus (udvikleroplevelse) og målgruppe.
+
+User:
+# Context from my IDE setup:
+
+## Active file: todo.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+- app.py: python/shiny_app/app.py
+- todo.md: todo.md
+
+## My request for Codex:
+1. Vi skal have shiny, dash, streamlit, ArcGIS Scene/3D viewer og powerBI. Lad os holde os fra selve datapipeline. 
+2. Det primære fokus skal være oplevelsen/brugbarheden for vibe-coderen/udvikleren. 
+3. det er primært til kortdage-præsentationen. Hvis output bliver en tabel tænker jeg, jeg vil have den med i min powerpoint-præsentation.
+Assistant:
+Tilbød et parameterkatalog (opsætningshastighed, AI-assistance, deployment friction osv.) til at sammenligne teknologierne med Kortdage-fokus.
+
+User:
+# Context from my IDE setup:
+
+## Active file: todo.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+- app.py: python/shiny_app/app.py
+- todo.md: todo.md
+
+## My request for Codex:
+Kan du lave et udkast evt med tabeller i en markdown fil (kald den pros_cons.md)
+Assistant:
+Oprettede `pros_cons.md` med en sammenligningstabel over Shiny, Dash, Streamlit, ArcGIS 3D og Power BI (parametre: opsætningshastighed, AI-assistance, deployment m.m.) og gemte den i UTF-8.
