@@ -63,3 +63,5 @@
 61. Vurder om dashboard-API’et er brugbart og foreslå plan uden at skrive kode.
 62. Lav en statisk GH Pages-side til webscenen og opdater prompt-logs.
 63. Tilføj et link fra `docs/index.html` til den nye `docs/scene.html`.
+64. Ret Living Atlas-referencen i scenesiden til et offentligt tilgængeligt link.
+65. Peg Living Atlas-kilden mod FeatureServer-endpointet i scene-siden og dokumentationen.

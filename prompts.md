@@ -434,3 +434,73 @@ User:
 Det ser godt ud, men tilføj også et link fra docs/index.html til docs/scene.html .
 Assistant:
 Implementerede den statiske sceneside (`docs/scene.html`) med konfigurerbar embed, opdaterede `docs/index.html` med et link, dokumenterede vedligeholdelse i `docs/README.md` og ajourførte prompt-loggene.
+User:
+# Context from my IDE setup:
+
+## Active file: docs/scene.html
+
+## Open tabs:
+- prompts.md: prompts.md
+- demo-script.md: docs/demo-script.md
+- README.md: docs/README.md
+- scene.html: docs/scene.html
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Der er noget, der ikke helt fungerer. Jeg har lavet scene offentligt tilgængelige, men i scene.html er denne url: https://livingatlas.arcgis.com/en/home/item.html?id=d1308f7c0ca34a6d9cf2fc36fc243637 Den giver mig 404 i en browser. Er det korrekt itemid?
+Assistant:
+Forklarede at Living Atlas-itemet kræver autorisering og anbefalede at bruge det offentligt tilgængelige ArcGIS-portal link (`https://www.arcgis.com/home/item.html?id=99fd67933e754a1181cc755146be21ca`).
+
+User:
+# Context from my IDE setup:
+
+## Active file: docs/scene.html
+
+## Open tabs:
+- prompts.md: prompts.md
+- demo-script.md: docs/demo-script.md
+- README.md: docs/README.md
+- scene.html: docs/scene.html
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg får:
+The item you requested cannot be found. The item may have been deleted or you may have entered an incorrect URL. i en popup i ArcGIS
+Assistant:
+Bekræftede, at `d1308…` er et Living Atlas-item der svarer 404 uden autorisation, og foreslog at bruge det offentlige item `99fd67933e754a1181cc755146be21ca` i stedet.
+
+User:
+# Context from my IDE setup:
+
+## Active file: docs/scene.html
+
+## Open tabs:
+- prompts.md: prompts.md
+- demo-script.md: docs/demo-script.md
+- README.md: docs/README.md
+- scene.html: docs/scene.html
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries_(Generalized)/FeatureServer Dette ligner servicen. Det andet link er der ikke adgang til.
+Assistant:
+Opdaterer `docs/scene.html` til at pege på portalen `https://www.arcgis.com/home/item.html?id=99fd67933e754a1181cc755146be21ca`, så referencen virker for alle.
+User:
+# Context from my IDE setup:
+
+## Active file: docs/scene.html
+
+## Active selection of the file:
+          url: "https://www.arcgis.com/home/item.html?id=99fd67933e754a1181cc755146be21ca",
+
+## Open tabs:
+- prompts.md: prompts.md
+- demo-script.md: docs/demo-script.md
+- README.md: docs/README.md
+- scene.html: docs/scene.html
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg vil hellere pege på servicen, da https://www.arcgis.com/home/item.html?id=99fd67933e754a1181cc755146be21ca stadig sender mig til login-siden. Kan du sætte det op.
+Assistant:
+Opdaterede `docs/scene.html` til at linke direkte til FeatureServer-endpointet og justerede `docs/README.md` samt prompt-loggene, så de beskriver den nye reference.
