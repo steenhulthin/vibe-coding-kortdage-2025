@@ -19,3 +19,4 @@
 - Gentag eksporten, når kildeappen ændres: `shinylive export python/shiny_app docs/shiny_app`.
 - Kører lokalt med `python -m http.server --directory docs/shiny_app` → åbne `http://localhost:8000/shiny_app/index.html`.
 - Appen bruger de samme SSI/geojson-data som Python-versionen; Shinylive-pakken indlæser dem automatisk fra den statiske export.
+- Data til Shinylive ligger i `python/shiny_app/data/...` og skal opdateres sammen med `python/data/...`, så exporten virker offline.

@@ -732,3 +732,22 @@ User:
 Tak. Jeg lader powerbi ligge nu. commit og push. Derefter skal vi have set på at få lavet en shinylive udgave af af shinydashboardet. (i docs folderen, så det bliver publiceret på ghpages) Der skal være link til det på index.html . Bare udfør det, jeg behøver ikke at høre planen først.
 Assistant:
 1) Commit/push de seneste Power BI-ændringer. 2) Installerede `shinylive` direkte (pip), kørte `shinylive export python/shiny_app docs/shiny_app`, og lagde statiske filer i `docs/shiny_app`. 3) Tilføjede link til Shiny-siden i `docs/index.html` og dokumenterede eksportflowet i `docs/README.md`. 4) Opdaterede prompt-loggene.
+User:
+# Context from my IDE setup:
+
+## Active file: python/shiny_app/app.py
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+- app.py: python/shiny_app/app.py
+
+## My request for Codex:
+Jeg får følgende fejl på /shiny_app/index.html:
+Traceback (most recent call last):
+...
+FileNotFoundError: [Errno 44] No such file or directory: '/home/pyodide/data/ssi_denmark/06_nye_indlaeggelser_pr_region_pr_dag.csv'
+Assistant:
+Bundled de nødvendige SSI/geojson-data under `python/shiny_app/data/`, tilføjede fallback i appen via `_resolve_data_path`, regenererede Shinylive-exporten og opdaterede dokumentationen.

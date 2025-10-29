@@ -13,26 +13,43 @@ from shinywidgets import output_widget, render_widget
 
 APP_ROOT = Path(__file__).resolve().parent
 PYTHON_ROOT = APP_ROOT.parent
-DATA_ROOT = PYTHON_ROOT / "data"
-SSI_ROOT = DATA_ROOT / "ssi_denmark"
-GEOJSON_PATH = DATA_ROOT / "geo" / "denmark_regions_simple.geojson"
+PRIMARY_DATA_ROOT = PYTHON_ROOT / "data"
+APP_DATA_ROOT = APP_ROOT / "data"
+
+
+def _resolve_data_path(*parts: str) -> Path:
+    """Return the first data path that exists (project data or bundled app data)."""
+    primary = PRIMARY_DATA_ROOT.joinpath(*parts)
+    if primary.exists():
+        return primary
+    fallback = APP_DATA_ROOT.joinpath(*parts)
+    if fallback.exists():
+        return fallback
+    raise FileNotFoundError(f"Could not locate data file: {Path(*parts)}")
+
+
+def _metric_path(filename: str) -> Path:
+    return _resolve_data_path("ssi_denmark", filename)
+
+
+GEOJSON_PATH = _resolve_data_path("geo", "denmark_regions_simple.geojson")
 
 METRICS: Dict[str, Dict[str, Any]] = {
     "hospitalizations": {
         "label": "Indlæggelser",
-        "path": SSI_ROOT / "06_nye_indlaeggelser_pr_region_pr_dag.csv",
+        "path": _metric_path("06_nye_indlaeggelser_pr_region_pr_dag.csv"),
         "color": "Reds",
         "unit": "personer",
     },
     "cases": {
         "label": "Bekræftede tilfælde",
-        "path": SSI_ROOT / "08_bekraeftede_tilfaelde_pr_dag_pr_regions.csv",
+        "path": _metric_path("08_bekraeftede_tilfaelde_pr_dag_pr_regions.csv"),
         "color": "Blues",
         "unit": "personer",
     },
     "deaths": {
         "label": "Dødsfald",
-        "path": SSI_ROOT / "07_antal_doede_pr_dag_pr_region.csv",
+        "path": _metric_path("07_antal_doede_pr_dag_pr_region.csv"),
         "color": "Purples",
         "unit": "personer",
     },
