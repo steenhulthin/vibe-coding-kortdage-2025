@@ -71,3 +71,4 @@
 69. Forsøg med Power BI Filled Map og manglende farve/slicer-felter; beslutning om at publicere trods begrænsninger.
 70. Eksportér Shiny-dashboard til Shinylive, link fra index og opdater dokumentation/logs.
 71. Fix Shinylive filfejl ved at bundle SSI/geojson-data i appen, opdatere data-path fallback og regenerere export.
+72. Opret `todo.md` i roden med næste skridt (geometrier, forsider, licens, hosting m.m.).

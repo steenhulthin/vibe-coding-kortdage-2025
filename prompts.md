@@ -751,3 +751,28 @@ Traceback (most recent call last):
 FileNotFoundError: [Errno 44] No such file or directory: '/home/pyodide/data/ssi_denmark/06_nye_indlaeggelser_pr_region_pr_dag.csv'
 Assistant:
 Bundled de nødvendige SSI/geojson-data under `python/shiny_app/data/`, tilføjede fallback i appen via `_resolve_data_path`, regenererede Shinylive-exporten og opdaterede dokumentationen.
+User:
+# Context from my IDE setup:
+
+## Active file: python/shiny_app/app.py
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+- app.py: python/shiny_app/app.py
+
+## My request for Codex:
+Fedt! Vil du oprette en todo.md i roden repoet med følgende punkter:
+1. tilføj/ret geometrier for regionerne. 
+2. Gør forsiden på ghpages mere indbydende og forklarende
+3. readme skal forbedres, så det er klart hvad formålet med repo'et er (kortdageoplæg - læring)
+4. Der skal tilføjes en licens, som passer til undervisning/inspiration, men ikke tillader kommercielt brug. 
+5. verificér at datareferencer er på plads
+6. Der skal være en liste over teknologier og fordele og ulemper i forhold til at arbejde med generativ AI. 
+7. Gør noget ved powerBI dashboardet
+8. host også shiny-dashboardet på shinyapps og link til det.
+9. host dash et sted
+Assistant:
+Oprettede `todo.md` i roden med de ni punkter, så næste skridt er samlet ét sted.
