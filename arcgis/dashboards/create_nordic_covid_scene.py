@@ -157,6 +157,21 @@ def _load_covid_data(data_path: Path) -> pd.DataFrame:
     return agg.sort_values(["location", "date"])
 
 
+def _load_population_data(data_path: Path) -> pd.Series:
+    df = pd.read_csv(
+        data_path,
+        usecols=["country", "population_2022"],
+    )
+    df = df[df["country"].isin(NORDIC_COUNTRIES)].copy()
+    missing = set(NORDIC_COUNTRIES) - set(df["country"])
+    if missing:
+        raise RuntimeError(
+            "Population lookup is missing values for: " + ", ".join(sorted(missing))
+        )
+    df["population_2022"] = df["population_2022"].astype(float)
+    return df.set_index("country")["population_2022"]
+
+
 def _build_feature_records(df: pd.DataFrame, geometries: Dict[str, Dict[str, object]]) -> List[dict]:
     records: List[dict] = []
     for _, row in df.iterrows():
@@ -171,6 +186,8 @@ def _build_feature_records(df: pd.DataFrame, geometries: Dict[str, Dict[str, obj
                     "country": location,
                     "report_date": ts_ms,
                     "new_deaths": float(row["new_deaths"]),
+                    "population_2022": float(row["population_2022"]),
+                    "deaths_per_100k": float(row["deaths_per_100k"]),
                 },
             }
         )
@@ -196,6 +213,8 @@ def _create_or_update_feature_layer(
         {"name": "country", "type": "esriFieldTypeString", "alias": "Country", "length": 64},
         {"name": "report_date", "type": "esriFieldTypeDate", "alias": "Report Date"},
         {"name": "new_deaths", "type": "esriFieldTypeDouble", "alias": "Daily deaths"},
+        {"name": "population_2022", "type": "esriFieldTypeDouble", "alias": "Population 2022"},
+        {"name": "deaths_per_100k", "type": "esriFieldTypeDouble", "alias": "Deaths per 100k"},
     ]
 
     time_info = {
@@ -231,6 +250,7 @@ def _create_or_update_feature_layer(
             "snippet": "Daily COVID-19 deaths for the Nordic countries.",
             "description": (
                 "Daily COVID-19 deaths derived from OWID data, joined with Living Atlas country geometries. "
+                "Includes 2022 population totals and deaths per 100,000 residents. "
                 "Use as a time-enabled layer for 3D visualization."
             ),
         }
@@ -455,6 +475,18 @@ def main() -> int:
     data_path = Path(__file__).resolve().parents[2] / "python" / "data" / "owid_covid_global.csv"
     deaths_df = _load_covid_data(data_path)
     print("Loaded deaths rows:", len(deaths_df))
+    population_path = Path(__file__).resolve().parents[2] / "python" / "data" / "nordic_population_2022.csv"
+    population_lookup = _load_population_data(population_path)
+    deaths_df["population_2022"] = deaths_df["location"].map(population_lookup)
+    if deaths_df["population_2022"].isna().any():
+        missing = deaths_df.loc[deaths_df["population_2022"].isna(), "location"].unique()
+        raise RuntimeError(
+            "Missing population values for: " + ", ".join(sorted(missing))
+        )
+    deaths_df["deaths_per_100k"] = (
+        deaths_df["new_deaths"] / deaths_df["population_2022"].replace({0: pd.NA}) * 100000
+    ).fillna(0.0)
+
     feature_records = _build_feature_records(deaths_df, projected_country_geoms)
     print("Prepared feature records:", len(feature_records))
 

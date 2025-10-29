@@ -19,3 +19,13 @@
   ```powershell
   "C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\propy.bat" arcgis\dashboards\create_nordic_covid_scene.py
   ```
+
+## Population reference
+
+- 2022-befolkningstal bruges i den nordiske COVID-19 scene og ligger i `python/data/nordic_population_2022.csv`.
+- Kilder (officiel statistik):
+  - Danmark: Statistics Denmark (Population 1 January 2022)
+  - Finland: Statistics Finland (Population structure 31 December 2022)
+  - Island: Statistics Iceland (Population 1 January 2022)
+  - Norge: Statistics Norway (Population 1 January 2022)
+  - Sverige: Statistics Sweden (Year-end population 2022)

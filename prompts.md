@@ -333,3 +333,38 @@ Projicerede scenedata til Web Mercator og tilføjede ArcGIS API-fallback, så sc
 - Commit `Project Nordic scene to Web Mercator` er pushet til både `github` og `origin`.
 
 Next steps: Ingen yderligere handling nødvendig, medmindre du vil tweake scenen yderligere.
+User:
+# Context from my IDE setup:
+
+## Active file: prompts.md
+
+## Open tabs:
+- create_nordic_covid_scene.py: arcgis/dashboards/create_nordic_covid_scene.py
+- prompts.md: prompts.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Hvor er du god! (strong) 
+Jeg vil gerne have tilføjet et par kolonner til data til ArcGIS scenen: den ene kolonne skal indeholde befolkningtallet i den specifikke land (tag det fra officiel statistik (for Danmark fx dst.dk) for år 2022, hvor der er muligt - giv besked hvis det ikke er muligt). den anden nye kolonne skal være dødeligheden pr 100000 indbyggere. Tilføj hvor befolkiningstallene kommer fra i readme.
+Assistant:
+Plan: 1) add an official population lookup (new CSV i `python/data/` + loader in the scene script) så every Nordic country record carries a 2022 population straight from its national statistics office, 2) extend the data prep to attach that population and compute deaths per 100,000 for each month, 3) push those two fields into the hosted layer schema/records, and 4) expand the README with the sources behind the population figures. Når koden er opdateret, får du også en status hvis et tal skulle mangle.
+Assistant:
+Added a population lookup and mortality metrics to the ArcGIS scene pipeline, so each monthly feature nu carry 2022 population og deaths per 100k. Extended scriptet (`arcgis/dashboards/create_nordic_covid_scene.py:160`, `arcgis/dashboards/create_nordic_covid_scene.py:187`, `arcgis/dashboards/create_nordic_covid_scene.py:218`, `arcgis/dashboards/create_nordic_covid_scene.py:482`) til at indlæse referencefilen, sætte attributter på hver record og eksponere de ekstra felter i hosted layer definitionen. Gemte kilderne i projektet (`python/data/nordic_population_2022.csv:1`) og dokumenterede dem i ArcGIS README (`arcgis/README.md:22`).
+
+Ingen automatiserede checks kørt; scriptet skal stadig køres via Pro for at opdatere ArcGIS Online.
+
+Next steps: 1) kør "C:\Program Files\ArcGIS\Pro\bin\Python\Scripts\propy.bat" arcgis\dashboards\create_nordic_covid_scene.py, 2) verificér de nye felter i ArcGIS Online.
+
+User:
+# Context from my IDE setup:
+
+## Active file: arcgis/dashboards/create_nordic_covid_scene.py
+
+## Open tabs:
+- create_nordic_covid_scene.py: arcgis/dashboards/create_nordic_covid_scene.py
+- nordic_population_2022.csv: python/data/nordic_population_2022.csv
+- prompts.md: prompts.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+opdatér logs og commit og push

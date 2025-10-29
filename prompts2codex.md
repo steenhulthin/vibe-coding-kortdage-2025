@@ -57,4 +57,5 @@
 55. Udbyg ArcGIS scenen til månedlige data, brug vector-tile light gray basemap og publicér via propy.
 56. Opdater prompt-loggen. Den skal være gemt i UTF-8.
 57. Opdater logs, commit og push begge remotes.
-
+58. Tilføj befolkningstal fra officielle kilder til arcgis scenen og beregn dødelighed pr 100.000.
+59. Opdater logs og lav commit/push.
