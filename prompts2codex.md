@@ -67,3 +67,5 @@
 65. Peg Living Atlas-kilden mod FeatureServer-endpointet i scene-siden og dokumentationen.
 66. Ret embed-parametre så webscenen vises i 3D med tidsregulator.
 67. Opdater scene-siden til at bruge Instant App 3D Viewer (eller Scene Viewer fallback) og log ændringen.
+68. Afklar Power BI-licenser, publicering og map-visuals (slået fra i desktop).
+69. Forsøg med Power BI Filled Map og manglende farve/slicer-felter; beslutning om at publicere trods begrænsninger.

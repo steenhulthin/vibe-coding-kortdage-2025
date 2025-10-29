@@ -556,3 +556,163 @@ User:
 Jeg har lavet en 3D viewer og embedded den tilføj til logs commit og push.
 Assistant:
 Bragte `scene.html` tilbage til en konfigurerbar `<iframe>` med `scene-embed`-ID, tilføjede `instantAppUrl` som primær indlejring (med Scene Viewer fallback), opdaterede `SCENE_CONFIG.webSceneId` og Living Atlas-kilden, og noterede processen i README samt prompt-loggene.
+User:
+# Context from my IDE setup:
+
+## Active file: docs/scene.html
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Nå, det var lidt sværere end håbet, men ok, lad os gå videre og få lavet et PowerBI dashboard med et kort. 
+Jeg har mulighed for at instalere powerBI desktop. Jeg kunne godt tænke at høre om 2 ting:
+Kan jeg publicere PowerBI på en statisk side (ghpages)?
+Hvad er der af muligheder for udvikling via kode (python? api? andet?)
+Assistant:
+Forklarede at Power BI kræver Power BI Service/Embedded for interaktiv hosting, og skitserede kode-/API-muligheder: REST, CLI, XMLA, Power Query, Python/R visuals, custom visuals.
+
+User:
+# Context from my IDE setup:
+
+## Active file: docs/scene.html
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+hvis jeg bruger powerbi desktop, hvordan finder jeg ud af organisation har et sted at publicere?
+Assistant:
+Viste hvordan man tjekker Power BI Service for workspaces/licenser og evt. kontakter admin for Pro/Premium-adgang.
+
+User:
+# Context from my IDE setup:
+
+## Active file: docs/scene.html
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Der er licens ser det ud til. hvordan får jeg hurtigst muligt lavet et dashboard, som jeg kan prøve at publicere?
+Assistant:
+Gav en trin-for-trin opskrift: hent data i Desktop, byg et simpelt kort med slicer, gem `.pbix`, publicer til workspace, og test embed via “Publish to web” eller deling.
+
+User:
+# Context from my IDE setup:
+
+## Active file: python/data/owid_covid_global_monthly.csv
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg har tilføjet owid_covid_global_monthly.csv som data, men kortet giver fejlen: Map and filled map visuals are disabled.... (selvom jeg har slået map og filled map til under global security.) Hvad kan det skyldes?
+Assistant:
+Forklarede at Power BI Desktop kræver genstart efter at slå kort til, og at tenant settings kan blokere – evt. skal administrator aktivere map-visuals globalt.
+
+User:
+# Context from my IDE setup:
+
+## Active file: prompts2codex.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Nå, mens jeg genstarter powerBI, kan du så ikke lige opdatere prompt logs.
+Assistant:
+Tilføjede de seneste Power BI-relaterede udvekslinger til både `prompts2codex.md` og `prompts.md`.
+User:
+# Context from my IDE setup:
+
+## Active file: prompts2codex.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg har tilføjet .pbix i powerbi mappen. 
+Jeg kan ikke finde: "Value i Size/Color, sæt Date som slicer eller tidslinje." Hvor finder jeg dem?
+Assistant:
+Viste hvor felterne normalt findes i Visualizations-pane (Location/Legend/Size/Color) og hvordan man trækker mål ind og bruger slicer-visualet.
+
+User:
+# Context from my IDE setup:
+
+## Active file: prompts2codex.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg er i powerbi version: Version: 2.143.954.0 64-bit (maj 2025)
+Jeg ser felterne: Location (hvor jeg har tilføjet "continent"-feltet), legend, latitude, longtitude, tooltips. måske er det under næste knap. Jeg klikker lidt rundt, mens du tænker.
+Assistant:
+Forklarede at de nye builds mangler Size/Color på standardkortet, og foreslog alternativer (Azure Maps, Filled Map, ArcGIS).
+
+User:
+# Context from my IDE setup:
+
+## Active file: prompts2codex.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Lad os prøve med mulighed 2.
+Assistant:
+Gik trin-for-trin igennem hvordan man konfigurerer Filled Map (Location + Color saturation, slicer for dato, data kategori).
+
+User:
+# Context from my IDE setup:
+
+## Active file: prompts2codex.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg kan ikke finde color saturation. Jeg kan heller ikke finde hvor jeg finder slicer. Kan du gøre det via kode direkte i .pbix filen?
+Assistant:
+Besvarede at `.pbix` ikke kan redigeres direkte via kode; forklarede hvor slicer findes og at Filled Map i 2025-builds ikke har Color saturation, så man bør vælge Azure Maps eller ArcGIS for avanceret styling.
+
+User:
+# Context from my IDE setup:
+
+## Active file: prompts2codex.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Ok, det ser ikke helt ud som jeg vil. Tilføj til logs commit og push. Derefter guide mig til at få publiceret dashboardet.
+Assistant:
+Noterer Power BI-forsøget i prompt-loggene, forbereder commit og push, og guider derefter gennem publicering i Power BI Service.
