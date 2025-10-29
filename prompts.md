@@ -776,3 +776,37 @@ Fedt! Vil du oprette en todo.md i roden repoet med følgende punkter:
 9. host dash et sted
 Assistant:
 Oprettede `todo.md` i roden med de ni punkter, så næste skridt er samlet ét sted.
+User:
+# Context from my IDE setup:
+
+## Active file: python/shiny_app/app.py
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+- app.py: python/shiny_app/app.py
+
+## My request for Codex:
+ok. tilføj CC BY-NC-SA 4.0
+Assistant:
+Lagde `LICENSE` med Creative Commons Attribution–NonCommercial–ShareAlike 4.0 i repoet og pushede ændringen.
+
+User:
+# Context from my IDE setup:
+
+## Active file: todo.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- scene.html: docs/scene.html
+- owid_covid_global_monthly.csv: python/data/owid_covid_global_monthly.csv
+- prompts2codex.md: prompts2codex.md
+- app.py: python/shiny_app/app.py
+- todo.md: todo.md
+
+## My request for Codex:
+overstreg punktet i todo (altså i markdown - punktet skal ikke slettes, bare overstreges).
+Assistant:
+Markerede TODO-punktet om licens som gennemført med markdown-~~overstregning og opdaterede prompt-loggen.

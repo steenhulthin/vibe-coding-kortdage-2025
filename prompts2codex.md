@@ -72,3 +72,4 @@
 70. Eksportér Shiny-dashboard til Shinylive, link fra index og opdater dokumentation/logs.
 71. Fix Shinylive filfejl ved at bundle SSI/geojson-data i appen, opdatere data-path fallback og regenerere export.
 72. Opret `todo.md` i roden med næste skridt (geometrier, forsider, licens, hosting m.m.).
+73. Tilføj CC BY-NC-SA 4.0 licens og markér TODO-punktet som udført.
