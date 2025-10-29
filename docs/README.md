@@ -10,5 +10,5 @@
 
 - Embed-siden læser konfiguration direkte fra `SCENE_CONFIG` nederst i `scene.html`. Opdater feltet `webSceneId` til item-ID'et fra ArcGIS Online (Share → Embed → kopier ID'et).
 - Tilpas `title`, `description`, `sourcesIntro` og listen `sources` for at ændre tekst og kildereferencer, fx hvis scenen eller datasættet skiftes ud.
-- Embed bruger ArcGIS' officielle URL (`https://www.arcgis.com/apps/Embed/index.html?webScene=...`) med tidsregulatoren aktiveret (`ui=time`). Efter opdatering: publicér igen via GitHub Pages eller kør `python -m http.server` til lokal verifikation.
+- Hvis du sætter `instantAppUrl`, indlæses den direkte (fx Instant App 3D Viewer). Uden den falder siden tilbage til Scene Viewer embed (`https://www.arcgis.com/apps/sceneviewer/index.html?webscene=...&embed=1`).
 - Living Atlas-referencen peger på FeatureServer-endpointet `https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries_(Generalized)/FeatureServer`. Hvis datasættet skifter, opdater både linket og feltet i `SCENE_CONFIG.sources`.

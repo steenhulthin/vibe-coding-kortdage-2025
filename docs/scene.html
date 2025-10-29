@@ -136,8 +136,13 @@
   </header>
 
   <section class="scene-frame">
-    <iframe id="scene-embed" title="ArcGIS Online webscene | nordisk COVID-19" allow="fullscreen; vr" loading="lazy"
-      src=""></iframe>
+    <iframe
+      id="scene-embed"
+      title="ArcGIS Online webscene | nordisk COVID-19"
+      allow="fullscreen; vr"
+      loading="lazy"
+      src=""
+    ></iframe>
 
     <article class="sources">
       <h2>Data og referencer</h2>
@@ -155,7 +160,9 @@
 
   <script>
     const SCENE_CONFIG = {
-      webSceneId: "718b2aee4d76465f86a9c191b57b2456",
+      webSceneId: "5997027da2a347e6a36c648fddd93774",
+      instantAppUrl:
+        "https://sseruminstitut.maps.arcgis.com/apps/instant/3dviewer/index.html?appid=2848094d39d24e3496b57354f95ca070",
       title: "Nordisk COVID-19 | tidsaktiveret 3D webscene",
       description:
         "Månedlige COVID-19 dødstal fra Our World In Data kombineret med Living Atlas geometri og nationale befolkningstal (2022). Brug tidsregulatoren for at se udviklingen.",
@@ -168,7 +175,7 @@
         },
         {
           label:
-            "Living Atlas | World Countries (Generalized), Esri (2024)",
+            "Living Atlas | World Countries (Generalized), Esri (2022)",
           url: "https://www.arcgis.com/home/webscene/viewer.html?layers=2b93b06dc0dc4e809d3c8db5cb96ba69",
         },
         {
@@ -206,17 +213,19 @@
       listEl.appendChild(li);
     });
 
+    const trimmedInstantApp = (SCENE_CONFIG.instantAppUrl || "").trim();
     const trimmedId = (SCENE_CONFIG.webSceneId || "").trim();
-    if (trimmedId) {
-      const embedUrl = new URL(
-        "https://www.arcgis.com/apps/Embed/index.html"
+
+    if (trimmedInstantApp) {
+      frame.src = trimmedInstantApp;
+    } else if (trimmedId) {
+      const sceneViewer = new URL(
+        "https://www.arcgis.com/apps/sceneviewer/index.html"
       );
-      embedUrl.searchParams.set("webScene", trimmedId);
-      embedUrl.searchParams.set("ui", "time");
-      embedUrl.searchParams.set("time", "true");
-      embedUrl.searchParams.set("locale", "da");
-      embedUrl.searchParams.set("scroll", "no");
-      frame.src = embedUrl.toString();
+      sceneViewer.searchParams.set("webscene", trimmedId);
+      sceneViewer.searchParams.set("embed", "1");
+      sceneViewer.searchParams.set("locale", "da");
+      frame.src = sceneViewer.toString();
     } else {
       frame.removeAttribute("src");
       warningEl.hidden = false;

@@ -65,3 +65,5 @@
 63. Tilføj et link fra `docs/index.html` til den nye `docs/scene.html`.
 64. Ret Living Atlas-referencen i scenesiden til et offentligt tilgængeligt link.
 65. Peg Living Atlas-kilden mod FeatureServer-endpointet i scene-siden og dokumentationen.
+66. Ret embed-parametre så webscenen vises i 3D med tidsregulator.
+67. Opdater scene-siden til at bruge Instant App 3D Viewer (eller Scene Viewer fallback) og log ændringen.

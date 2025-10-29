@@ -504,3 +504,55 @@ User:
 Jeg vil hellere pege på servicen, da https://www.arcgis.com/home/item.html?id=99fd67933e754a1181cc755146be21ca stadig sender mig til login-siden. Kan du sætte det op.
 Assistant:
 Opdaterede `docs/scene.html` til at linke direkte til FeatureServer-endpointet og justerede `docs/README.md` samt prompt-loggene, så de beskriver den nye reference.
+User:
+# Context from my IDE setup:
+
+## Active file: docs/scene.html
+
+## Active selection of the file:
+    const SCENE_CONFIG = {
+      webSceneId: "718b2aee4d76465f86a9c191b57b2456",
+## Open tabs:
+- prompts.md: prompts.md
+- demo-script.md: docs/demo-script.md
+- README.md: docs/README.md
+- scene.html: docs/scene.html
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Det bliver vist i 2D og hverken timeslider eller data bliver vist. Der er noget der ikke er helt korrekt.
+Assistant:
+Korrigerede embed-URL'en til at bruge parametrene `webscene=<id>` og `view=scene`, så ArcGIS indlæser 3D-versionen med tidsregulatoren. Opdaterede `docs/scene.html` og `docs/README.md`, samt prompt-loggene.
+User:
+# Context from my IDE setup:
+
+## Active file: docs/scene.html
+
+## Open tabs:
+- prompts.md: prompts.md
+- demo-script.md: docs/demo-script.md
+- README.md: docs/README.md
+- scene.html: docs/scene.html
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Nu har jeg prøvet med min anden scene directe på url'en i det embedded element ( https://www.arcgis.com/apps/Embed/index.html?webscene=5997027da2a347e6a36c648fddd93774&view=scene&ui=time&time=true&locale=da&scroll=no ) det giver mig et 2D kort der ikke ser korrekt ud.
+Assistant:
+Forklarede at ArcGIS Embed-app'en ikke håndterer webscener fuldt i 3D og anbefalede Scene Viewer eller Instant App 3D Viewer til indlejring.
+
+User:
+# Context from my IDE setup:
+
+## Active file: docs/scene.html
+
+## Open tabs:
+- prompts.md: prompts.md
+- demo-script.md: docs/demo-script.md
+- README.md: docs/README.md
+- scene.html: docs/scene.html
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg har lavet en 3D viewer og embedded den tilføj til logs commit og push.
+Assistant:
+Bragte `scene.html` tilbage til en konfigurerbar `<iframe>` med `scene-embed`-ID, tilføjede `instantAppUrl` som primær indlejring (med Scene Viewer fallback), opdaterede `SCENE_CONFIG.webSceneId` og Living Atlas-kilden, og noterede processen i README samt prompt-loggene.
