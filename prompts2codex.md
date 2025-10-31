@@ -83,3 +83,5 @@
 81. Afklar mulighed for at genskabe tidligere `praesentation.md`-version; kræver manuel kopi da filen aldrig blev committed.
 82. Byg SSI-inspireret styling, markdown-baseret præsentationsside og opdateret docs-forside med præsentationslink.
 83. Fix klikbare links ved at deaktivere overlay-pointer-events, tilføj `docs/praesentation.md` og opdater loaderens fallback-rækkefølge.
+84. Opdater SRI-hash for Marked-scriptet, så markdown-parseren loader uden fejl.
+85. Erstat CDN-afhængighed med lokal `assets/js/marked.min.js` (simpel parser) og opdater præsentationssiden.

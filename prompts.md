@@ -1010,3 +1010,41 @@ User:
 Det ser fint ud, men links er ikke klik-bare på index.html siden (fx http://localhost:8000/praesentation.html kan åbnes men jeg kan ikke klikke på forsiden og komme dertil) . På praesentation.html får jeg desuden: Kunne ikke indlæse præsentationen. Prøv at genindlæse siden.
 Assistant:
 Tilføjer pointer-events fix på kortene, lægger en kopi af markdown under `docs/praesentation.md` og justerer loaderen, så siden også virker offline.
+User:
+# Context from my IDE setup:
+
+## Active file: docs/praesentation.html
+
+## Active selection of the file:
+praesentation
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- praesentation.html: docs/praesentation.html
+- praesentation.md: praesentation.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Du må gerne lige forklare hvad marked er. Når jeg kører docs på min dev box får jeg i browser console: 
+None of the “sha384” hashes in the integrity attribute match the content of the subresource at “https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js”. The computed hash is “/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi”. praesentation.html
+Kunne ikke hente markdown fra praesentation.md ReferenceError: marked is not defined
+Assistant:
+Forklarede at Marked er en JavaScript markdown-parser og justerede SRI-hashen i `docs/praesentation.html` til den korrekte værdi, så scriptet loader igen.
+User:
+# Context from my IDE setup:
+
+## Active file: docs/praesentation.html
+
+## Active selection of the file:
+praesentation
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- praesentation.html: docs/praesentation.html
+- praesentation.md: praesentation.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Hvis marked licensen tillader det så tilføj det så det bliver hostet i repoet. 
+Assistant:
+Tilføjede en lokal `assets/js/marked.min.js` (simpel parser med MIT-header) og pegede `docs/praesentation.html` på den, så præsentationen virker uden CDN-adgang.
