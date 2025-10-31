@@ -75,13 +75,13 @@
     - Prompt (prompts2codex #55): "Udbyg ArcGIS scenen til månedlige data, brug vector-tile light gray basemap og publicér via propy."
     - Opfølgning (#58): "Tilføj befolkningstal fra officielle kilder til arcgis scenen og beregn dødelighed pr 100.000."
     - Svært at lave udviklingen med vibe coding - der er brug for at klikke rundt i ArcGIS online
-    - TODO: indsæt screenshot
+    - screenshot: ![ArcGIS demo](assests_praesentation/arcgis_3dviewer.png)
 
 ## Slide X - Power BI
 - **Power BI:** AI-assistance vs. enterprise-friktion (licenser, hosting, maps)
     - Meget friktion
     - AI har det svært med brugerflader - specielt når de ændrer sig meget over tid/versioner
-    - TODO: indsæt screenshot
+    - screenshot: ![PowerBI demo](assests_praesentation/powerbi_demo.png)
 
 ## Slide X - Vurdering af de forskellige teknologier
 - Hvordan er teknologierne i forhold til at udvikling med AI
