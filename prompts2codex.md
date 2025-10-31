@@ -75,3 +75,5 @@
 73. Tilføj CC BY-NC-SA 4.0 licens og markér TODO-punktet som udført.
 74. Opret pros_cons.md med AI-fokuseret sammenligning af Shiny, Dash, Streamlit, ArcGIS 3D og Power BI.
 75. Juster pros_cons.md: Power BI som mindre god (opsætning/AI) og fjern visuel fleksibilitet.
+76. Tilføj i `agents.md` en regel om at opdatere `prompts.md` og `prompts2codex.md` efter hvert svar.
+77. Bekræft at den nye regel er aktiv og registreret.

@@ -12,6 +12,7 @@
 - **Ingen destruktive bulk-ændringer** uden godkendelse.
 - Følg PEP8, brug typer når det hjælper.
 - Filstruktur og navne som i repoet her.
+- Opdater `prompts.md` og `prompts2codex.md` ved hvert svar.
 - ArcGIS-arbejde skal som udgangspunkt løses med ArcGIS API for Python og bruge Living Atlas for geografiske datasæt, når det er muligt.
 
 ## Kontekst (pin/copy til AI-chat)

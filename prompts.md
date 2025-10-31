@@ -878,3 +878,36 @@ User:
 Jeg tror, vi må sætte Power BI i mindre god på Opsætningshastighed og AI-assistance i forhold til vibe-coding. Drop også rækken med Visuel fleksibilitet.
 Assistant:
 Justering: Power BI markeret som **mindre god** på opsætningshastighed/AI-assistance, fjernet rækken "Visuel fleksibilitet" og genopdateret `pros_cons.md`.
+User:
+# Context from my IDE setup:
+
+## Active file: agents.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- agents.md: agents.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Kan du tilføje til agents.md, at prompts.md og prompts2codex.md skal opdateres ved hver svar du giver.
+Assistant:
+Opdaterede `agents.md:15` med en ny ground rule om at holde `prompts.md` og `prompts2codex.md` ajour ved hvert svar og bekræftede næste skridt.
+User:
+# Context from my IDE setup:
+
+## Active file: prompts.md
+
+## Active selection of the file:
+%Userprofile%\AppData\Local\Programs\ArcGIS\Pro\bin\Python\Scripts\propy.bat arcgis\dashboards\create_nordic_covid_scene.py
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- agents.md: agents.md
+- praesentation.md: praesentation.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Ok, godt. Virker det?
+Assistant:
+Bekræftede at den nye ground rule virker, og noterede opdateringerne i både `prompts.md` og `prompts2codex.md`.
