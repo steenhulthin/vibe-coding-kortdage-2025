@@ -911,3 +911,19 @@ User:
 Ok, godt. Virker det?
 Assistant:
 Bekræftede at den nye ground rule virker, og noterede opdateringerne i både `prompts.md` og `prompts2codex.md`.
+User:
+# Context from my IDE setup:
+
+## Active file: praesentation.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- agents.md: agents.md
+- praesentation.md: praesentation.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+add, commit og push alt undtagen praesentation.md som jeg er i gang med (manuelt). 
+Assistant:
+Stagede `agents.md`, `prompts.md` og `prompts2codex.md`, committede som "Update agent workflow guidance and logs" og push'ede til både `github` og `origin`, mens `praesentation.md` forblev urørt.
