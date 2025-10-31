@@ -1,30 +1,42 @@
 # Vibe coding og AI-assisteret udvikling af geodata-dashboards
 
-## Slide 1 - Velkommen og hook
-- COVID-19-data + AI-assisteret udvikling = dashboards på rekordtid
-- Format: 20 minutter med energi, aha-øjeblikke og ærlige fejltrin
+## Slide 1 - Velkommen
+- AI + data => dashboards på rekordtid
 
 ## Slide 2 - Hvem er på scenen?
-- Hvad/hvem er SSI, og hvorfor arbejder vi med AI?
-- Kort om Steen (rolle, hverdag på SSI, hvorfor AI begejstrer)
-- SSI og AI: vi tester og deler – ikke kun teori
+- Hvordan arbejder vi med [AI](https://en.wikipedia.org/wiki/Generative_artificial_intelligence) og hvad/hvem er [SSI](https://ssi.dk)?
+    * SSI er under Indenrigs- og Sundhedsministeriet. SSI forebygger og bekæmper infektionssygdomme og medfødte sygdomme. 
+    * har nedskrevne retninglinjer for brug og muligheder for at søge om at benytte AI på nye måder eller nye sammenhænge
+    * [bruger AI seriøst](https://www.ssi.dk/aktuelt/nyheder/2024/millionstoette-til-ai-drevet-forskning-i-blodforgiftning)
+    * har en godkendt AI-prompt
+- Hvem er [Steen Hulthin Rasmussen](https://www.linkedin.com/in/steenhulthin/) 
+    * ![Steen Hulthin Rasmussen på cykel i rummet, hvor der er en regnbue... (don't ask)](assests_praesentation/DEK_2026.png)
+    * er datadomptør/udvikler/kaffedrikker
+    * arbejder til daglig med datapipelines og udvikling af dashboards
+    * synes AI er lige dele fremtiden, et fantastisk værktøj, skræmmende, fascinerende og kildekritikfremkaldende
 
 ## Slide 3 - Vibe coding vs. AI-assisteret udvikling
-- Vibe coding: AI som makker i IDE’et (autofuldførelse, chat, kodeforslag)
-- AI-assisteret udvikling: manuel prompt-workflow uden for IDE’et
-- Samme mindset, forskelligt værktøjsspor
-- Hvor kommer begrebet “vibe coding” fra, og hvorfor giver det mening her?
+- Hvad er “vibe coding” og kan AI hjælpe med kode?
+    - TODO: tilføj coining af term og reference (evt. reference til wikipedia eller lignende)
+    - Vibe coding: AI som makker i [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)’et (autofuldførelse, chat, kodeforslag)
+    - AI-assisteret udvikling: manuel prompt-workflow udenfor IDE’et (den almindelige prompt)
+    - Samme grundidé, men forskellige tilgange
 
 ## Slide 4 - Mission briefing (mål, data, værktøjer, tidsramme)
-- **Mål:** bygge dashboards hurtigt, teste AI-samarbejdet, dele læring til Kortdage
-- **Data:** COVID-19 KPI’er på globalt, EU-, nordisk og dansk niveau
-- **Værktøjer:** Streamlit, Shiny, Dash, ArcGIS (API + Dashboards), Power BI
-- **Tidsramme:** et par uger på aftener/weekender → 20 minutters præsentation
+- Mission briefing
+    - **Mål:** bygge dashboards hurtigt og spare Kortdage-deltagerne for faldgruberne
+    - **Data:** COVID-19 tal på globalt, EU-, nordisk og dansk niveau
+    - **Værktøjer:** Streamlit, Shiny, Dash, ArcGIS (API + Dashboards/Viewer), Power BI
+    - **Tidsramme:** 5 fredage (som var lige i underkanten) → 20 minutters præsentation
 
 ## Slide 5 - Ambitionen (aka "det var ret ambitiøst...")
-- Ét datasæt, fem platforme
-- 3 Python-teknologier + ArcGIS dashboard + Power BI dashboard
-- Ensartede KPI-navne, farver og fortælling på tværs
+- Ambitionen (eller "det var ret ambitiøst...")
+    - 3 datasæt, fem platforme
+    - 3 Python-teknologier + ArcGIS dashboard + Power BI dashboard
+    - Lær, forstå og videreformidl
+    - Lad alt materiale være tilgængelig
+    - Kom så langt som muligt
+    - Hav det sjovt
 
 ## Slide 6 - Første aha-oplevelse
 - PowerPoint-eksperimentet der sparkede projektet i gang
