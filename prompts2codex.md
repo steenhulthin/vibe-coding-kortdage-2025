@@ -87,3 +87,4 @@
 85. Erstat CDN-afhængighed med lokal `assets/js/marked.min.js` (simpel parser) og opdater præsentationssiden.
 86. Udfyld præsentationsslides med prompteksempler (Streamlit, Shiny, Dash, ArcGIS) hentet fra prompt-loggene.
 87. Fjern ubenyttet `requirements.txt` i roden og behold `python/requirements.txt` til venv'et.
+88. Flet `docs/README.md` og `python/README.md` til et samlet rod-`README.md` og slet de gamle filer.

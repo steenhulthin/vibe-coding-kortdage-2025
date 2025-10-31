@@ -1084,3 +1084,20 @@ User:
 Der er 2 requirements.txt filer, men der er kun et venv nu. Kan du slette den, der ikke bliver brugt.
 Assistant:
 Slettede rodfilen `requirements.txt`, da VS Code-tasken allerede bruger `python/requirements.txt` til venv-installationen.
+User:
+# Context from my IDE setup:
+
+## Active file: python/README.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- praesentation.md: praesentation.md
+- README.md: python/README.md
+- app.py: python/dash_app/app.py
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Der er lidt rod med readme.md. Der er 2 filer. Jeg vil gerne have 1 readme.md fil. Den skal ligge i roden af projektet og skal dække hele projektet og alle teknologierne, der bliver brugt. Skal med at merge de 2 readme filer. 
+Assistant:
+Skabte et samlet `README.md` i roden, flettede indholdet fra `docs/README.md` og `python/README.md`, og fjernede de gamle filer.
