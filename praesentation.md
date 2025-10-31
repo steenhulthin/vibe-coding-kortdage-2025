@@ -48,6 +48,13 @@
 
 ![Præsentationsskabelon](assests_praesentation\praesentationsskabelon.png) | ![AI tilføjer indhold til skabelon...](assests_praesentation\praesentationsskabelon_med_ai_indhold.png)
 
+## Slide X - Hvordan ser AI-assiteret udvikling ud?
+- Hvordan ser AI-assiteret udvikling ud?
+TODO: indsæt film/GIS af prompt og returfiler
+
+## Slide X - Hvordan ser vibe coding ud? 
+TODO: indsæt film/GIS af prompt og ændringer i IDE
+
 ## Slide X - Streamlit
 - **Streamlit:** prompts → global prototype; link til streamlit.app
     - Prompt: "Lad os lave dashboards. Lad os starte med Streamlit. Streamlit skal være med OWID data. Der skal øverst være et kort over verden. Landene skal være farvet efter indlæggelser per capita og skraveret efter dødsfald per capita (hvis det er muligt). Der skal være en periodevælger, hvor der kan vælges år og måned. Tallene skal summeres over den valgte periode. Det skal være muligt at vælge et specifikt land. Under kortet skal der være en graf der viser indlæggelser og død per capita over tid (summeret på månedsniveau) for det valgte land (og ellers for hele verden)."
