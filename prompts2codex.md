@@ -80,3 +80,4 @@
 78. Stage, commit og push alle ændringer undtagen `praesentation.md`.
 79. Gennemgå præsentation og abstract, foreslå forbedringer og stille opklarende spørgsmål.
 80. Tilføj "ingen tøjforslag"-regel, commit/push og omstrukturér præsentationen med ekstra slides.
+81. Afklar mulighed for at genskabe tidligere `praesentation.md`-version; kræver manuel kopi da filen aldrig blev committed.

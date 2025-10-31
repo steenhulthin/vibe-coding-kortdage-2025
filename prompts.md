@@ -961,3 +961,20 @@ User:
 Abstractet er det endelige accepterede. Det ligger fast. Kan du skrive ind i agents.md, at du aldrig må give forslag til tøj fremover. :] derefter commit og push. Derefter giv mig et bud på rearrangeret praesentation. Tilføj også sliden med mål, datakilder, værktøjer, tidsramme. 
 Assistant:
 Tilføjer ny ground rule mod tøjforslag, committer/pusher ændringen og leverer omstruktureret præsentationsudkast inkl. slide om mål, data, værktøjer og tidsplan.
+User:
+# Context from my IDE setup:
+
+## Active file: praesentation.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- agents.md: agents.md
+- praesentation.md: praesentation.md
+- abstract.md: abstract.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg ville gerne have haft git added, commitet og pushed den tidligere version (som jeg havde skrevet) af praesentation.md. Er det muligt? (Det SKAL være den præcise version - eller skal der ikke gøres noget).
+Assistant:
+Forklarede at den oprindelige `praesentation.md` aldrig blev committed, så Git kan ikke genskabe den præcist; eneste mulighed er en manuel rekonstruktion, hvis du stadig har teksten åbent eller vil kopiere den ind igen.
