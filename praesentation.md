@@ -39,34 +39,64 @@
     - Hav det sjovt
 
 ## Slide 6 - Første aha-oplevelse
-- PowerPoint-eksperimentet der sparkede projektet i gang
-- Hvad AI ramte plet med, og hvor mennesket måtte overtage
+- Første aha-oplevelse (Optimisme -> realisme)
+    - Steen: "Lad AI lave en PowerPoint-præsentation i SSI skabelonen..."
+    - 2 timer og mange forsøg senere: "Nå, måske er AI bedre til at skrive kode and PowerPoint..."
 
-## Slide 7 - Tool sprint: Python-trioen
+![Præsentationsskabelon](assests_praesentation\praesentationsskabelon.png) | ![AI tilføjer indhold til skabelon...](assests_praesentation\praesentationsskabelon_med_ai_indhold.png)
+
+## Slide X - Streamlit
 - **Streamlit:** prompts → global prototype; link til streamlit.app
-- **Shiny:** sidebar/timelapse; Shinylive-export som backup; hosting-status
-- **Dash:** geojson-dansefest, simplificering og prompts der fejlede (og blev reddet)
+    - TODO: find eksempler på en god prompt (kun få opfølgnende prompts)
+    - TODO: indsæt screenshot
 
-## Slide 8 - Tool sprint: ArcGIS & Power BI
-- **ArcGIS 3D scene:** propy-workflow, Living Atlas, tidsregulator
+## Slide X - Shiny
+- **Shiny:** sidebar/timelapse; Shinylive-export som backup; hosting-status
+    - TODO: find eksempler på en god prompt (kun få opfølgnende prompts)
+    - TODO: indsæt screenshot
+
+## Slide X - Dash
+- **Dash:** geojson-dansefest, simplificering og prompts der fejlede (og blev reddet)
+    - TODO: find eksempler på en god prompt (kun få opfølgnende prompts)
+    - TODO: indsæt screenshot
+
+## Slide X - ArcGIS
+- **ArcGIS 3D scene:** propy-workflow, Living Atlas, timeslider og 3D
+    - TODO: find eksempler på en god prompt (kun få opfølgnende prompts)
+    - Svært at lave udviklingen med vibe coding - der er brug for at klikke rundt i ArcGIS online
+    - TODO: indsæt screenshot
+
+## Slide X - Power BI
 - **Power BI:** AI-assistance vs. enterprise-friktion (licenser, hosting, maps)
-- Et par prompt-eksempler hvor det ikke lykkedes – og hvad der virkede i stedet
+    - Meget friktion
+    - AI har det svært med brugerflader - specielt når de ændrer sig meget over tid/versioner
+    - TODO: indsæt screenshot
+
+## Slide X - Vurdering af de forskellige teknologier
+- Hvordan er teknologierne i forhold til at udvikling med AI
+    TODO: indsæt pros_cons.md tabel
 
 ## Slide 9 - Hvad er AI særligt velegnet til?
-- Lyn-prototyper og idéafprøvning
-- Review/korrektur og dokumentation
-- Teknologier med stor community-hjælp
-- Workflows der kan scriptes eller automatiseres
+- Hvad er AI særligt velegnet til?
+    - Lyn-prototyper og idéafprøvning
+    - Review/korrektur og dokumentation
+    - Teknologier med stor community-hjælp
+    - Workflows der kan scriptes eller automatiseres
 
 ## Slide 10 - Tips til at bruge AI effektivt
-- Del kontekst – ellers gætter AI forkert
-- Bed AI’en stille dig spørgsmål før løsningen
-- Log dine prompts (prompts.md) og gem hits som skabeloner
+- Tips til at bruge AI effektivt
+    - Giv noget kontekst – så får du bedre svar
+    - Bed AI’en stille dig spørgsmål før den forelår løsningen
+    - Bed om flere mulige løsninger med for og imod
+    - Log dine prompts (prompts.md) og gem hits som skabeloner
 
 ## Slide 11 - Overvejelser og sikkerhed
-- Må du bruge AI på arbejdet? Hvad siger politikkerne?
-- Vibe coding vs. AI-assisteret udvikling ift. compliance og logging
-- Datafølsomhed og hosting (cloud vs. on-prem)
+- Overvejelser og sikkerhed
+    - Må du bruge AI på arbejdet? Hvad siger politikkerne?
+    - Vibe coding vs. AI-assisteret udvikling ift. compliance og logging
+    - Datafølsomhed
+    TODO: eksempel på vibe coding
+    TODO: eksempel på AI-assisteret
 
 ## Slide 12 - Læring og takeaways
 - Hvor gav AI størst værdi, og hvornår spildte vi tiden?
