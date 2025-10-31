@@ -78,3 +78,5 @@
 76. Tilføj i `agents.md` en regel om at opdatere `prompts.md` og `prompts2codex.md` efter hvert svar.
 77. Bekræft at den nye regel er aktiv og registreret.
 78. Stage, commit og push alle ændringer undtagen `praesentation.md`.
+79. Gennemgå præsentation og abstract, foreslå forbedringer og stille opklarende spørgsmål.
+80. Tilføj "ingen tøjforslag"-regel, commit/push og omstrukturér præsentationen med ekstra slides.

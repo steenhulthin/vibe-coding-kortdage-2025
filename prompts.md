@@ -927,3 +927,37 @@ User:
 add, commit og push alt undtagen praesentation.md som jeg er i gang med (manuelt). 
 Assistant:
 Stagede `agents.md`, `prompts.md` og `prompts2codex.md`, committede som "Update agent workflow guidance and logs" og push'ede til både `github` og `origin`, mens `praesentation.md` forblev urørt.
+User:
+# Context from my IDE setup:
+
+## Active file: abstract.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- agents.md: agents.md
+- praesentation.md: praesentation.md
+- abstract.md: abstract.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Se Praesentation.md igennem. Det skal være indholdet af min præsentation til kortdage 2025. Jeg har også tilføjet abstract.md, hvor du kan læse abstracten til konferencen. Hvad tænker du om præsentationsindholdet? Stil gerne nogle spørgsmål? Punkterne i abstracted skal arrangeres, så det giver bedre flow og der skal tilføjes en afslutning (som minimum). Kom med forslag til forbedring. Der er 20 min til præsentationen og den skal gerne være en smule underholdende. Foreslå gerne tøj jeg kan have på, der passer til oplægget.
+Assistant:
+Giver feedback på præsentationsstrukturen, foreslår omrokering/flow for abstract, anbefaler afslutning, stiller opklarende spørgsmål og kommer med idéer til tone og påklædning.
+User:
+# Context from my IDE setup:
+
+## Active file: abstract.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- agents.md: agents.md
+- praesentation.md: praesentation.md
+- abstract.md: abstract.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Abstractet er det endelige accepterede. Det ligger fast. Kan du skrive ind i agents.md, at du aldrig må give forslag til tøj fremover. :] derefter commit og push. Derefter giv mig et bud på rearrangeret praesentation. Tilføj også sliden med mål, datakilder, værktøjer, tidsramme. 
+Assistant:
+Tilføjer ny ground rule mod tøjforslag, committer/pusher ændringen og leverer omstruktureret præsentationsudkast inkl. slide om mål, data, værktøjer og tidsplan.
