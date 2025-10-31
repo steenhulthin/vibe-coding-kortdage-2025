@@ -1,4 +1,4 @@
-# Vibe coding og AI-assisteret udvikling af geodata-dashboards
+﻿# Vibe coding og AI-assisteret udvikling af geodata-dashboards
 
 ## Slide 1 - Velkommen
 - AI + data => dashboards på rekordtid
@@ -26,6 +26,9 @@
 - Mission briefing
     - **Mål:** bygge dashboards hurtigt og spare Kortdage-deltagerne for faldgruberne
     - **Data:** COVID-19 tal på globalt, EU-, nordisk og dansk niveau
+        - globalt: Our world in data - TODO: tilføj link og evt. credits
+        - EU: ECDC - TODO: tilføj link og evt. credits
+        - Dansk: SSI - TODO: tilføj link og evt. credits
     - **Værktøjer:** Streamlit, Shiny, Dash, ArcGIS (API + Dashboards/Viewer), Power BI
     - **Tidsramme:** 5 fredage (som var lige i underkanten) → 20 minutters præsentation
 
@@ -47,22 +50,28 @@
 
 ## Slide X - Streamlit
 - **Streamlit:** prompts → global prototype; link til streamlit.app
-    - TODO: find eksempler på en god prompt (kun få opfølgnende prompts)
-    - TODO: indsæt screenshot
+    - Prompt: "Lad os lave dashboards. Lad os starte med Streamlit. Streamlit skal være med OWID data. Der skal øverst være et kort over verden. Landene skal være farvet efter indlæggelser per capita og skraveret efter dødsfald per capita (hvis det er muligt). Der skal være en periodevælger, hvor der kan vælges år og måned. Tallene skal summeres over den valgte periode. Det skal være muligt at vælge et specifikt land. Under kortet skal der være en graf der viser indlæggelser og død per capita over tid (summeret på månedsniveau) for det valgte land (og ellers for hele verden)."
+    - AI kommer med en plan
+    - Prompt: "Make it so!" ![Captain Picard - "make it so!"](assests_praesentation/make-it-so-star-trek.gif)
+    - efter lidt fejlrettelse - og pasting af fejlkoder er dashboardet klar
+    - screenshot: ![Streamlit demo](assests_praesentation/streamlit_demo.png)
 
 ## Slide X - Shiny
 - **Shiny:** sidebar/timelapse; Shinylive-export som backup; hosting-status
-    - TODO: find eksempler på en god prompt (kun få opfølgnende prompts)
+    - Prompt (prompts2codex #50): "Brug en shinypy version der understøtter sidebar og opdater layoutet derefter."
+    - Opfølgning (#52): "Fjern seneste tal-boksen og lad kortet fylde hele bredden; grafen skal stadig ligge under."
     - TODO: indsæt screenshot
 
 ## Slide X - Dash
 - **Dash:** geojson-dansefest, simplificering og prompts der fejlede (og blev reddet)
-    - TODO: find eksempler på en god prompt (kun få opfølgnende prompts)
+    - Prompt (prompts2codex #37): "Jeg vil gerne have en app med et kort over Danmark inddelt i regioner. Kortet skal vise et timelapse over indlæggelser over tid baseret på det danske data. Tænker du Dash eller shiny til den opgave?"
+    - Opfølgning (#40): "Jeg har lagt regioner.geojson i python/data/. Brug den i stedet for demo-geojsonen."
     - TODO: indsæt screenshot
 
 ## Slide X - ArcGIS
 - **ArcGIS 3D scene:** propy-workflow, Living Atlas, timeslider og 3D
-    - TODO: find eksempler på en god prompt (kun få opfølgnende prompts)
+    - Prompt (prompts2codex #55): "Udbyg ArcGIS scenen til månedlige data, brug vector-tile light gray basemap og publicér via propy."
+    - Opfølgning (#58): "Tilføj befolkningstal fra officielle kilder til arcgis scenen og beregn dødelighed pr 100.000."
     - Svært at lave udviklingen med vibe coding - der er brug for at klikke rundt i ArcGIS online
     - TODO: indsæt screenshot
 
@@ -85,6 +94,7 @@
 
 ## Slide 10 - Tips til at bruge AI effektivt
 - Tips til at bruge AI effektivt
+    - Når du vibe coder og får en fejl: prompt AI med fejlen og kontekst (log, hvad du forventer og hvad du rent faktisk fik) og bed den rette fejlen
     - Giv noget kontekst – så får du bedre svar
     - Bed AI’en stille dig spørgsmål før den forelår løsningen
     - Bed om flere mulige løsninger med for og imod

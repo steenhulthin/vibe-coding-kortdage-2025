@@ -1048,3 +1048,21 @@ praesentation
 Hvis marked licensen tillader det så tilføj det så det bliver hostet i repoet. 
 Assistant:
 Tilføjede en lokal `assets/js/marked.min.js` (simpel parser med MIT-header) og pegede `docs/praesentation.html` på den, så præsentationen virker uden CDN-adgang.
+User:
+# Context from my IDE setup:
+
+## Active file: praesentation.md
+
+## Active selection of the file:
+TODO: find eksempler på en god prompt (kun få opfølgende prompts)
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- praesentation.md: praesentation.md
+- DEK_2026.png: assests_praesentation/DEK_2026.png
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg har arbejde lidt videre på præsentationen (praesentatoin.md). Vil du finde nogle eksempler på prompts til "TODO: find eksempler på en god prompt (kun få opfølgnende prompts)". Tag ekspemplerne fra prompts.md og/eller prompts2codex.md. Hvis du ikke finder noget relevant eller godt til alle slides, så lad det være som det er.
+Assistant:
+Indsatte prompteksempler fra `prompts2codex.md` for Streamlit, Shiny, Dash og ArcGIS i `praesentation.md` og lod de resterende TODO’er stå.

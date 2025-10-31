@@ -85,3 +85,4 @@
 83. Fix klikbare links ved at deaktivere overlay-pointer-events, tilføj `docs/praesentation.md` og opdater loaderens fallback-rækkefølge.
 84. Opdater SRI-hash for Marked-scriptet, så markdown-parseren loader uden fejl.
 85. Erstat CDN-afhængighed med lokal `assets/js/marked.min.js` (simpel parser) og opdater præsentationssiden.
+86. Udfyld præsentationsslides med prompteksempler (Streamlit, Shiny, Dash, ArcGIS) hentet fra prompt-loggene.
