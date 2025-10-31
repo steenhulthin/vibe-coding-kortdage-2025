@@ -99,11 +99,16 @@
     TODO: eksempel på AI-assisteret
 
 ## Slide 12 - Læring og takeaways
-- Hvor gav AI størst værdi, og hvornår spildte vi tiden?
-- Hvad ville vi gøre anderledes næste gang?
-- Konkrete råd til at prøve vibe coding på dit eget dashboard
+- Læring og takeaways
+    - Hvis du ved, hvad du skal gøre og det ikke tager lang tid, så gør det selv
+    - Hvor gav AI størst værdi, og hvornår var det spild af tid?
+    - Konkrete råd til at prøve vibe coding på dit eget dashboard
+        - lav en agents.md (eller find en på nettet eller få hjælp af AI til at lave den)
+        - vælg en teknologi, der bliver brugt af mange
+        - vælg metode/teknologi som du selv forstår (ikke et must, men det gør alting nemmere)
+    - AI gør os ikke (nødvendigvis) dummere, hvis du forstår, hvad laver kan du virkelig lære mange nye ting
 
-## Slide 13 - Afslutning og næste skridt
-- AI er makker, ikke magi – du styrer retningen
+## Slide 13 - Afslutning
+- AI er magisk makker, når det bruger den rigtigt
 - QR/link til repo + invitation til at dele erfaringer med SSI-teamet
 - Q&A og tak for nu
