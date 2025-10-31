@@ -56,17 +56,19 @@
     - efter lidt fejlrettelse - og pasting af fejlkoder er dashboardet klar
     - screenshot: ![Streamlit demo](assests_praesentation/streamlit_demo.png)
 
+## Slide X - Dash
+- **Dash:** geojson-dansefest, simplificering og prompts der fejlede (og blev reddet)
+    - Prompt: "Jeg vil gerne have en app med et kort over Danmark inddelt i regioner. Kortet skal vise et timelapse over indlæggelser over tid baseret på det danske data. Tænker du Dash eller shiny til den opgave?"
+    - Meget bøvl med geojson. Læring: giv AI det data, der skal benyttes, så formatet er korrekt. AI er god til at generere data også, men det er nok ikke i det skema du ønsker.
+    - screenshot: ![Dash demo](assests_praesentation/dash_demo.png)
+
 ## Slide X - Shiny
 - **Shiny:** sidebar/timelapse; Shinylive-export som backup; hosting-status
     - Prompt (prompts2codex #50): "Brug en shinypy version der understøtter sidebar og opdater layoutet derefter."
     - Opfølgning (#52): "Fjern seneste tal-boksen og lad kortet fylde hele bredden; grafen skal stadig ligge under."
-    - TODO: indsæt screenshot
+    - https://steenhulthin.shinyapps.io/covid-19-regionalt-overblik/
+    - screenshot: ![Shiny demo](assests_praesentation/shiny_demo.png)
 
-## Slide X - Dash
-- **Dash:** geojson-dansefest, simplificering og prompts der fejlede (og blev reddet)
-    - Prompt (prompts2codex #37): "Jeg vil gerne have en app med et kort over Danmark inddelt i regioner. Kortet skal vise et timelapse over indlæggelser over tid baseret på det danske data. Tænker du Dash eller shiny til den opgave?"
-    - Opfølgning (#40): "Jeg har lagt regioner.geojson i python/data/. Brug den i stedet for demo-geojsonen."
-    - TODO: indsæt screenshot
 
 ## Slide X - ArcGIS
 - **ArcGIS 3D scene:** propy-workflow, Living Atlas, timeslider og 3D
