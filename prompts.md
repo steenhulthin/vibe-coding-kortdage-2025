@@ -1101,3 +1101,24 @@ User:
 Der er lidt rod med readme.md. Der er 2 filer. Jeg vil gerne have 1 readme.md fil. Den skal ligge i roden af projektet og skal dække hele projektet og alle teknologierne, der bliver brugt. Skal med at merge de 2 readme filer. 
 Assistant:
 Skabte et samlet `README.md` i roden, flettede indholdet fra `docs/README.md` og `python/README.md`, og fjernede de gamle filer.
+User:
+# Context from my IDE setup:
+
+## Active file: praesentation.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- praesentation.md: praesentation.md
+- streamlit.html: docs/streamlit.html
+- scene.html: docs/scene.html
+- praesentation.html: docs/praesentation.html
+- index.html: docs/index.html
+- README.md: README.md
+- app.py: python/dash_app/app.py
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Ser det realistisk ud med præsentationen på  20 minutter?
+Assistant:
+Vurderer tidsforbruget slide for slide og kommer med forslag til, hvordan du kan holde dig inden for 20 minutter (evt. samle eller stramme enkelte sektioner).
