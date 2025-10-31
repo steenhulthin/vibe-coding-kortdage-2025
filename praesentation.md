@@ -101,6 +101,7 @@
     - Bed AI’en stille dig spørgsmål før den forelår løsningen
     - Bed om flere mulige løsninger med for og imod
     - Log dine prompts (prompts.md) og gem hits som skabeloner
+    - Hav noget arbejde du kan laves mens AI'en "tænker". Nogle opgaver tager lang tid.
 
 ## Slide 11 - Overvejelser og sikkerhed
 - Overvejelser og sikkerhed
@@ -121,6 +122,5 @@
     - AI gør os ikke (nødvendigvis) dummere, hvis du forstår, hvad laver kan du virkelig lære mange nye ting
 
 ## Slide 13 - Afslutning
-- AI er magisk makker, når det bruger den rigtigt
-- QR/link til repo + invitation til at dele erfaringer med SSI-teamet
+- AI er magisk makker, når man bruger den rigtigt
 - Q&A og tak for nu
