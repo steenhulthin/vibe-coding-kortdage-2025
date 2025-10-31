@@ -3,90 +3,62 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vibe Coding – COVID-19 dashboards</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        background: #0d1117;
-        color: #f0f6fc;
-      }
-      header {
-        padding: 2rem 1.5rem 1rem;
-        background: rgba(13, 17, 23, 0.95);
-        border-bottom: 1px solid rgba(240, 246, 252, 0.1);
-      }
-      main {
-        flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 2rem 1.5rem 3rem;
-      }
-      h1 {
-        margin: 0;
-        font-size: 2rem;
-      }
-      p {
-        margin: 0.75rem 0 0;
-        max-width: 60ch;
-        color: rgba(240, 246, 252, 0.75);
-      }
-      a {
-        color: #58a6ff;
-        text-decoration: none;
-        font-weight: 600;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-      li {
-        background: rgba(88, 134, 255, 0.08);
-        border: 1px solid rgba(88, 134, 255, 0.2);
-        border-radius: 12px;
-        padding: 1.2rem 1.4rem;
-      }
-      li strong {
-        display: block;
-        margin-bottom: 0.2rem;
-        font-size: 1.05rem;
-      }
-    </style>
+    <title>Vibe Coding · Kortdage 2025</title>
+    <link rel="stylesheet" href="assets/css/ssi-theme.css" />
   </head>
   <body>
-    <header>
-      <h1>Vibe Coding – COVID-19 dashboards</h1>
-      <p>
-        Samlede demopakker til Kortdage 2025. Brug navigationen herunder til at
-        åbne de enkelte dashboards.
-      </p>
+    <header class="site-header">
+      <div class="inner">
+        <h1>Vibe coding · COVID-19 dashboards til Kortdage 2025</h1>
+        <p>
+          Samling af demoer, præsentationsmateriale og værktøjsnoter til oplægget
+          om AI-assisteret udvikling. Alt indhold lever i dette repository og
+          kan tilgås herfra.
+        </p>
+      </div>
     </header>
-    <main>
-      <ul>
-        <li>
-          <strong>Streamlit (stlite)</strong>
-          <a href="streamlit.html">Åbn Streamlit-demoen</a>
-        </li>
-        <li>
-          <strong>ArcGIS 3D webscene</strong>
-          <a href="scene.html">Åbn webscenen</a>
-        </li>
-        <li>
-          <strong>Shiny (Shinylive)</strong>
-          <a href="shiny_app/index.html">Åbn Shiny-dashboardet</a>
-        </li>
-      </ul>
+    <main class="content">
+      <section class="card-grid">
+        <article class="card">
+          <h2>Præsentationsoutline</h2>
+          <p>
+            Gennemgå slides og manus direkte fra markdown-kilden. Siden
+            opdateres automatisk med den nyeste version af
+            <code>praesentation.md</code>.
+          </p>
+          <a class="cta" href="praesentation.html">Åbn præsentationen</a>
+        </article>
+        <article class="card">
+          <h2>Streamlit-demo</h2>
+          <p>
+            Global COVID-19 oversigt bygget med vibe coding i Streamlit og
+            publiceret via stlite.
+          </p>
+          <a class="cta" href="streamlit.html">Vis Streamlit-dashboard</a>
+        </article>
+        <article class="card">
+          <h2>Shiny (Shinylive)</h2>
+          <p>
+            Interaktivt Danmark-kort og tidsserie gengivet via Shinylive.
+          </p>
+          <a class="cta" href="shiny_app/index.html">Vis Shiny-dashboard</a>
+        </article>
+        <article class="card">
+          <h2>ArcGIS webscene</h2>
+          <p>
+            3D-visualisering af de nordiske KPI’er med tidsregulator og Living
+            Atlas-baggrund.
+          </p>
+          <a class="cta" href="scene.html">Vis ArcGIS-scenen</a>
+        </article>
+        <article class="card">
+          <h2>Bagvedliggende noter</h2>
+          <p>
+            Dokumentation, scripts og ekstra referencer til demoerne.
+          </p>
+          <a class="cta" href="README.md">Læs dokumentationen</a>
+        </article>
+      </section>
     </main>
   </body>
 </html>

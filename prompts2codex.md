@@ -81,3 +81,5 @@
 79. Gennemgå præsentation og abstract, foreslå forbedringer og stille opklarende spørgsmål.
 80. Tilføj "ingen tøjforslag"-regel, commit/push og omstrukturér præsentationen med ekstra slides.
 81. Afklar mulighed for at genskabe tidligere `praesentation.md`-version; kræver manuel kopi da filen aldrig blev committed.
+82. Byg SSI-inspireret styling, markdown-baseret præsentationsside og opdateret docs-forside med præsentationslink.
+83. Fix klikbare links ved at deaktivere overlay-pointer-events, tilføj `docs/praesentation.md` og opdater loaderens fallback-rækkefølge.

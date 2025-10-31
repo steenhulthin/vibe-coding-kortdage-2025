@@ -978,3 +978,35 @@ User:
 Jeg ville gerne have haft git added, commitet og pushed den tidligere version (som jeg havde skrevet) af praesentation.md. Er det muligt? (Det SKAL være den præcise version - eller skal der ikke gøres noget).
 Assistant:
 Forklarede at den oprindelige `praesentation.md` aldrig blev committed, så Git kan ikke genskabe den præcist; eneste mulighed er en manuel rekonstruktion, hvis du stadig har teksten åbent eller vil kopiere den ind igen.
+User:
+# Context from my IDE setup:
+
+## Active file: praesentation.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- agents.md: agents.md
+- praesentation.md: praesentation.md
+- abstract.md: abstract.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Jeg skal lave powerpoint præsentation (den laver jeg selv, for jeg skal bruge en særlig skabelon). Indholdet i præsentationen skal være i praesentation.md eller evt. i flere .md-filer. Præsentationen skal også være tilgængelig på ghpages, så kom med 2-3 forslag til hvordan det kan gøres.  
+Assistant:
+Normaliserede `praesentation.md`, lagde SSI-inspireret styling under `docs/assets/css/ssi-theme.css`, byggede en markdown-drevet visning i `docs/praesentation.html` og opdaterede `docs/index.html` med link til præsentationen og demoerne.
+User:
+# Context from my IDE setup:
+
+## Active file: todo.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- praesentation.md: praesentation.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Det ser fint ud, men links er ikke klik-bare på index.html siden (fx http://localhost:8000/praesentation.html kan åbnes men jeg kan ikke klikke på forsiden og komme dertil) . På praesentation.html får jeg desuden: Kunne ikke indlæse præsentationen. Prøv at genindlæse siden.
+Assistant:
+Tilføjer pointer-events fix på kortene, lægger en kopi af markdown under `docs/praesentation.md` og justerer loaderen, så siden også virker offline.
