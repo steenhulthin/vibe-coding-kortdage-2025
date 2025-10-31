@@ -1,0 +1,12 @@
+{
+    "https://api.shinyapps.io": {
+        "server_url": "https://api.shinyapps.io",
+        "filename": "C:\\Users\\b246800\\Documents\\prj\\vibe_coding\\python\\shiny_app",
+        "app_url": "https://steenhulthin.shinyapps.io/covid-19-regionalt-overblik/",
+        "app_id": "15933160",
+        "app_guid": null,
+        "title": "COVID-19-regionalt-overblik",
+        "app_mode": "python-shiny",
+        "app_store_version": 1
+    }
+}

@@ -86,3 +86,4 @@
 84. Opdater SRI-hash for Marked-scriptet, så markdown-parseren loader uden fejl.
 85. Erstat CDN-afhængighed med lokal `assets/js/marked.min.js` (simpel parser) og opdater præsentationssiden.
 86. Udfyld præsentationsslides med prompteksempler (Streamlit, Shiny, Dash, ArcGIS) hentet fra prompt-loggene.
+87. Fjern ubenyttet `requirements.txt` i roden og behold `python/requirements.txt` til venv'et.

@@ -1066,3 +1066,21 @@ TODO: find eksempler på en god prompt (kun få opfølgende prompts)
 Jeg har arbejde lidt videre på præsentationen (praesentatoin.md). Vil du finde nogle eksempler på prompts til "TODO: find eksempler på en god prompt (kun få opfølgnende prompts)". Tag ekspemplerne fra prompts.md og/eller prompts2codex.md. Hvis du ikke finder noget relevant eller godt til alle slides, så lad det være som det er.
 Assistant:
 Indsatte prompteksempler fra `prompts2codex.md` for Streamlit, Shiny, Dash og ArcGIS i `praesentation.md` og lod de resterende TODO’er stå.
+User:
+# Context from my IDE setup:
+
+## Active file: praesentation.md
+
+## Open tabs:
+- prompts.md: prompts.md
+- todo.md: todo.md
+- praesentation.md: praesentation.md
+- requirements.txt: python/requirements.txt
+- requirements.txt: requirements.txt
+- app.py: python/shiny_app/app.py
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+Der er 2 requirements.txt filer, men der er kun et venv nu. Kan du slette den, der ikke bliver brugt.
+Assistant:
+Slettede rodfilen `requirements.txt`, da VS Code-tasken allerede bruger `python/requirements.txt` til venv-installationen.
