@@ -51,10 +51,11 @@
 
 ## Slide X - Hvordan ser AI-assiteret udvikling ud?
 - Hvordan ser AI-assiteret udvikling ud?
-TODO: indsæt film/GIS af prompt og returfiler
+![AI-assisteret udvikling](assests_praesentation/AlderApp.gif)
 
 ## Slide X - Hvordan ser vibe coding ud? 
-TODO: indsæt film/GIS af prompt og ændringer i IDE
+- Hvordan ser Vibe Coding ud?
+![Vibe Coding udvikling](assests_praesentation/beregn_hundealder.gif)
 
 ## Slide X - Streamlit
 - **Streamlit:** prompts → global prototype; link til streamlit.app
@@ -93,7 +94,18 @@ TODO: indsæt film/GIS af prompt og ændringer i IDE
 
 ## Slide X - Vurdering af de forskellige teknologier
 - Hvordan er teknologierne i forhold til at udvikling med AI
-    TODO: indsæt pros_cons.md tabel
+
+| Parameter | Shiny (Shinylive/ShinyApps) | Dash | Streamlit | ArcGIS Scene / 3D Viewer | Power BI |
+| --- | --- | --- | --- | --- | --- |
+| Opsætningshastighed | **middel** – kræver strukturering af UI/server, men let CLI-deploy via Shinylive/ShinyApps | **middel** – Python + layout-komponenter, mere boilerplate | **fremragende** – enkel `st.*` API, godt til prototyper | **mindre god** – JSON-/scene-script skal bruges og afhænger af ArcGIS-konto | **mindre god** – desktop-workflow + publicering tager længere tid |
+| AI-assistance | **god** – Copilot/ChatGPT klarer `ui`, `server` og `plotly`-snippets | **god** – AI genererer callbacks/layout, men debugging kræver manuel viden | **fremragende** – AI laver komplette apps | **mindre god** – AI kan generere JSON, men ArcGIS-specifikke felter kræver erfaring | **mindre god** – AI hjælper med M/DAX, men begrænset støtte til visuals |
+| Udvidelsesmuligheder | **fremragende** – fuld Python og mulighed for custom JS/Plotly | **fremragende** – understøtter custom komponenter og API-integration | **middel** – Python + begrænset custom JS | **mindre god** – Scene Viewer/Instant Apps styres af Esri-skabeloner | **mindre god** – Custom visuals kræver TypeScript SDK |
+| Deployment friction | **god** – Shinylive (statisk) eller ShinyApps (PaaS) | **middel** – kræver cloud-hosting (Fly, Render, Heroku) | **fremragende** – Streamlit Cloud/Huggingface et par klik | **mindre god** – kræver ArcGIS Online publicering og login | **mindre god** – kræver Power BI Service/Premium og licenser |
+| Performance + datahåndtering | **god** – Pandas + caching muligt | **god** – FastAPI/WSGI stack kan skaleres | **middel** – Pandas i runtime, mindre tuning | **middel** – Scenen klarer store datasæt men 3D kræver optimering | **fremragende** – stærk på aggregeret data og refresh-planer |
+| Samarbejde & kontrol | **god** – Git-venlig, let at reviewe Python | **god** – Git/CI/CD passer til workflow | **god** – Git + CLI eksport muligt | **middel** – Scene JSON/py scripts versioneres, men UI håndteres i webportal | **mindre god** – PBIX binær og kræver BI-proces |
+| Publikumsoplevelse | **god** – Interaktivt og web-friendly | **middel** – Interaktivt, mere "app-lignende" | **middel** – Hurtig at demonstrere, men standard look | **fremragende** – Stor "wow"-faktor med 3D og tidsstyring | **god** – Kendt BI-oplevelse med filtre |
+
+**Scorer:** fremragende > god > middel > mindre god (for Kortdage-demoens fokus: hurtig udvikling med generativ AI, lav friction ved deling og stærk publikumsoplevelse).
 
 ## Slide 9 - Hvad er AI særligt velegnet til?
 - Hvad er AI særligt velegnet til?
@@ -102,15 +114,6 @@ TODO: indsæt film/GIS af prompt og ændringer i IDE
     - Teknologier med stor community-hjælp
     - Workflows der kan scriptes eller automatiseres
 
-## Slide 10 - Tips til at bruge AI effektivt
-- Tips til at bruge AI effektivt
-    - Når du vibe coder og får en fejl: prompt AI med fejlen og kontekst (log, hvad du forventer og hvad du rent faktisk fik) og bed den rette fejlen
-    - Giv noget kontekst – så får du bedre svar
-    - Bed AI’en stille dig spørgsmål før den forelår løsningen
-    - Bed om flere mulige løsninger med for og imod
-    - Log dine prompts (prompts.md) og gem hits som skabeloner
-    - Hav noget arbejde du kan laves mens AI'en "tænker". Nogle opgaver tager lang tid.
-
 ## Slide 11 - Overvejelser og sikkerhed
 - Overvejelser og sikkerhed
     - Må du bruge AI på arbejdet? Hvad siger politikkerne?
@@ -118,13 +121,16 @@ TODO: indsæt film/GIS af prompt og ændringer i IDE
     - Datafølsomhed 
         * Mit råd: brug aldrig persondata - brug kunstig eller offentlig tilgængeligt data
         * Hvis der er brug for rigtig data, så gør det manuelt, når løsningen skal i drift
-    TODO: eksempel på vibe coding
-    TODO: eksempel på AI-assisteret
 
-## Slide 12 - Læring og takeaways
-- Læring og takeaways
+## Slide 12 - Tips til at bruge AI effektivt
+- Tips til at bruge AI effektivt
+    - Når du vibe coder og får en fejl: prompt AI med fejlen og kontekst (log, hvad du forventer og hvad du rent faktisk fik) og bed den rette fejlen
+    - Giv noget kontekst – så får du bedre svar
+    - Bed AI’en stille dig spørgsmål før den forelår løsningen
+    - Bed om flere mulige løsninger med for og imod
+    - Log dine prompts (prompts.md) og gem hits som skabeloner
+    - Hav noget arbejde du kan laves mens AI'en "tænker". Nogle opgaver tager lang tid.
     - Hvis du ved, hvad du skal gøre og det ikke tager lang tid, så gør det selv
-    - Hvor gav AI størst værdi, og hvornår var det spild af tid?
     - Konkrete råd til at prøve vibe coding på dit eget dashboard
         - lav en agents.md (eller find en på nettet eller få hjælp af AI til at lave den)
         - vælg en teknologi, der bliver brugt af mange
@@ -132,7 +138,7 @@ TODO: indsæt film/GIS af prompt og ændringer i IDE
     - AI gør os ikke (nødvendigvis) dummere, hvis du forstår, hvad laver kan du virkelig lære mange nye ting
 
 ## Slide 13 - Afslutning
-- AI er magisk makker, når man bruger den rigtigt
+- AI er magisk makker, når man bruger den rigtigt.
 - Q&A og tak for I kom!
 - Link til "alt": 
     * https://github.com/steenhulthin/vibe-coding-kortdage-2025 
