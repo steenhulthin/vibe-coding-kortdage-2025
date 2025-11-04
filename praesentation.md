@@ -17,7 +17,8 @@
 
 ## Slide 3 - Vibe coding vs. AI-assisteret udvikling
 - Hvad er “vibe coding” og kan AI hjælpe med kode?
-    - TODO: tilføj coining af term og reference (evt. reference til wikipedia eller lignende)
+    - [Vibe coding](https://en.wikipedia.org/wiki/Vibe_coding) er et ret nyt udtryk (2025), som blev "opfundet" af en co-founder af OpenAI (som står for chatgpt) 
+    - konceptet er at AI (sprogmodellen) skriver koden og du som udvikler ikke nødvendigvis forstår alt (eller noget overhovedet) af koden. 
     - Vibe coding: AI som makker i [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)’et (autofuldførelse, chat, kodeforslag)
     - AI-assisteret udvikling: manuel prompt-workflow udenfor IDE’et (den almindelige prompt)
     - Samme grundidé, men forskellige tilgange
@@ -71,23 +72,23 @@ TODO: indsæt film/GIS af prompt og ændringer i IDE
 
 ## Slide X - Shiny
 - **Shiny:** sidebar/timelapse; Shinylive-export som backup; hosting-status
-    - Prompt (prompts2codex #50): "Brug en shinypy version der understøtter sidebar og opdater layoutet derefter."
-    - Opfølgning (#52): "Fjern seneste tal-boksen og lad kortet fylde hele bredden; grafen skal stadig ligge under."
+    - promtede AI til at give forslag til at foreslå en visualisering på baggrund af data. 
+    - Resultatet blev meget lig Dash dashboardet
     - https://steenhulthin.shinyapps.io/covid-19-regionalt-overblik/
     - screenshot: ![Shiny demo](assests_praesentation/shiny_demo.png)
 
-
 ## Slide X - ArcGIS
 - **ArcGIS 3D scene:** propy-workflow, Living Atlas, timeslider og 3D
-    - Prompt (prompts2codex #55): "Udbyg ArcGIS scenen til månedlige data, brug vector-tile light gray basemap og publicér via propy."
-    - Opfølgning (#58): "Tilføj befolkningstal fra officielle kilder til arcgis scenen og beregn dødelighed pr 100.000."
+    - Promptede generering af en 3D scene. Data generering fungerede rimeligt (med et par hickups)
     - Svært at lave udviklingen med vibe coding - der er brug for at klikke rundt i ArcGIS online
+    - Resultatet blev ganske godt, men AI "forstår" ikke helt, hvad der skal til for at få tingene til at fungere i ArcGIS online
     - screenshot: ![ArcGIS demo](assests_praesentation/arcgis_3dviewer.png)
 
 ## Slide X - Power BI
 - **Power BI:** AI-assistance vs. enterprise-friktion (licenser, hosting, maps)
     - Meget friktion
     - AI har det svært med brugerflader - specielt når de ændrer sig meget over tid/versioner
+    - Jeg opgav at lave et funktionelt dashboard med AI. Vibe codning var ikke mulig og prompt svar var upræcise og ikke mulige at følge i PowerBI brugerfladen 
     - screenshot: ![PowerBI demo](assests_praesentation/powerbi_demo.png)
 
 ## Slide X - Vurdering af de forskellige teknologier
@@ -114,7 +115,9 @@ TODO: indsæt film/GIS af prompt og ændringer i IDE
 - Overvejelser og sikkerhed
     - Må du bruge AI på arbejdet? Hvad siger politikkerne?
     - Vibe coding vs. AI-assisteret udvikling ift. compliance og logging
-    - Datafølsomhed
+    - Datafølsomhed 
+        * Mit råd: brug aldrig persondata - brug kunstig eller offentlig tilgængeligt data
+        * Hvis der er brug for rigtig data, så gør det manuelt, når løsningen skal i drift
     TODO: eksempel på vibe coding
     TODO: eksempel på AI-assisteret
 
@@ -130,4 +133,7 @@ TODO: indsæt film/GIS af prompt og ændringer i IDE
 
 ## Slide 13 - Afslutning
 - AI er magisk makker, når man bruger den rigtigt
-- Q&A og tak for nu
+- Q&A og tak for I kom!
+- Link til "alt": 
+    * https://github.com/steenhulthin/vibe-coding-kortdage-2025 
+    * https://steenhulthin.github.io/vibe-coding-kortdage-2025/ 
