@@ -28,6 +28,15 @@ Dette repository samler alt materiale til Kortdage-oplægget om vibe coding og A
 - **Dash**: `python python/dash_app/app.py`
 - **Shiny**: `shiny run --reload python/shiny_app/app.py`
 
+### Hostede dashboards
+
+- **Streamlit Cloud**: https://vibe-coding-kortdage-2025.streamlit.app/
+- **Shinyapps.io**: https://steenhulthin.shinyapps.io/covid-19-regionalt-overblik/
+  - Installer `rsconnect-python` én gang: `pip install rsconnect-python`
+  - Log ind: `rsconnect login --server shinyapps.io --token <TOKEN> --secret <SECRET>`
+  - Deploy fra repoet: `rsconnect deploy shiny python/shiny_app/app.py --title covid-19-regionalt-overblik`
+  - Efter første deploy kan appen genudgives via `rsconnect deploy shiny python/shiny_app/app.py`
+
 Shiny-appen kan eksporteres til Shinylive med:
 ```powershell
 shinylive export python/shiny_app docs/shiny_app

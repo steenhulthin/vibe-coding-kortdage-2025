@@ -9,4 +9,4 @@
 7. Gør noget ved Power BI-dashboardet (layout, funktionalitet eller deling).
 8. Host Shiny-dashboardet på shinyapps.io og link til det.
 9. Host Dash-applikationen et sted og gør den tilgængelig via link.
-10. tilføj link til shinyapps.io app: https://steenhulthin.shinyapps.io/covid-19-regionalt-overblik/ og instruks i readme
+10. ~~tilføj link til shinyapps.io app: https://steenhulthin.shinyapps.io/covid-19-regionalt-overblik/ og instruks i readme~~

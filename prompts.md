@@ -1179,3 +1179,19 @@ User:
 Vil du fjerne stlite and forsøget på at hoste streamlit app'en med stlite og i stedet erstatte links til stlite app'en med streamlit.app app'en: https://vibe-coding-kortdage-2025.streamlit.app/ 
 Assistant:
 Fjernede stlite-embed siden ved at erstatte `docs/streamlit.html` med en viderestilling til Streamlit Cloud, opdaterede forsiden til at linke direkte til `https://vibe-coding-kortdage-2025.streamlit.app/`, og justerede README-beskrivelsen, så den nævner den hostede app.
+User:
+# Context from my IDE setup:
+
+## Active file: prompts2codex.md
+
+## Open tabs:
+- praesentation.md: praesentation.md
+- todo.md: todo.md
+- demo-script.md: docs/demo-script.md
+- index.html: docs/index.html
+- README.md: README.md
+
+## My request for Codex:
+Kan du klare todo nummer 10 i todo.md? I samme omgang må du gerne også fikse link til readme.md i docs/index.html . readme.md skal blive i roden, så du kan linke til raw fx (eller på anden måde). Det kunne være fint hvis markup bliver taget med, men det vigtigste er at stilen fra index.html så vidt muligt følges. 
+Assistant:
+Tjekkede TODO-listen og markerede punkt 10 som løst ved at linke Shiny-kortet på forsiden til shinyapps.io, tilføjede et fallback-link til Shinylive-versionen, udvidede README med hostede dashboard-instrukser inkl. `rsconnect`-deploy, oprettede `docs/readme.html` som henter den rå README via Marked og opdaterede forsiden til at pege på den nye side.
