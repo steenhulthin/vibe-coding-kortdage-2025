@@ -91,3 +91,4 @@
 89. Vurdér tidsplanen for præsentationen ift. 20-minutters slot og foreslå justeringer.
 90. Raadgav om Streamlit Cloud-fejlen: manglede plotly, fordi kun rodfilen installeres; anbefalede at oprette requirements.txt i roden (evt. med -r python/requirements.txt) inden redeploy.
 91. Flyttede Python-kravene til rodfilen, fjernede python/requirements.txt, opdaterede README-stien og ajourfoerte prompt-loggene.
+92. Fjernede stlite-løsningen ved at lade docs/streamlit.html viderestille til Streamlit Cloud og opdaterede forsiden og README til at linke dertil.

@@ -48,7 +48,7 @@ shinylive export python/shiny_app docs/shiny_app
 
 - `docs/index.html` er landingssiden med links til præsentation, Streamlit-demo, Shinylive-dashboard og ArcGIS webscenen.
 - `docs/praesentation.html` loader `praesentation.md` og viser oplæggets outline direkte fra GitHub Pages.
-- `docs/streamlit.html` bruger [stlite](https://github.com/whitphx/stlite) til at køre `python/streamlit_app/app.py` i browseren.
+- `docs/streamlit.html` viderestiller til den hostede version på Streamlit Cloud.
 - `docs/shiny_app/` indeholder Shinylive-exporten.
 - `docs/scene.html` embedder webscenen (Instant App/Scene Viewer) og beskriver datakilderne.
 - Publicér via **GitHub Pages → Deploy from branch** (vælg `trunk` og `/docs`). Lokal test: `python -m http.server --directory docs` og åbn `http://localhost:8000/`.

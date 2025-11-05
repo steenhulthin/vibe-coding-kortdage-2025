@@ -1166,3 +1166,16 @@ User:
 I stopped debugging, so you should be able to write now. I would prefer to only have one requirements file. Can you move it to the root and make sure that other references to the requirements file are updated. 
 Assistant:
 Flyttede Python-afhængighederne til rodfilen `requirements.txt`, fjernede `python/requirements.txt`, opdaterede README'et til at bruge den nye sti og ajourførte promptloggene.
+User:
+# Context from my IDE setup:
+
+## Active file: todo.md
+
+## Open tabs:
+- praesentation.md: praesentation.md
+- todo.md: todo.md
+
+## My request for Codex:
+Vil du fjerne stlite and forsøget på at hoste streamlit app'en med stlite og i stedet erstatte links til stlite app'en med streamlit.app app'en: https://vibe-coding-kortdage-2025.streamlit.app/ 
+Assistant:
+Fjernede stlite-embed siden ved at erstatte `docs/streamlit.html` med en viderestilling til Streamlit Cloud, opdaterede forsiden til at linke direkte til `https://vibe-coding-kortdage-2025.streamlit.app/`, og justerede README-beskrivelsen, så den nævner den hostede app.
