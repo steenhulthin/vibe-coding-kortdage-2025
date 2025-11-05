@@ -89,3 +89,5 @@
 87. Fjern ubenyttet `requirements.txt` i roden og behold `python/requirements.txt` til venv'et.
 88. Flet `docs/README.md` og `python/README.md` til et samlet rod-`README.md` og slet de gamle filer.
 89. Vurdér tidsplanen for præsentationen ift. 20-minutters slot og foreslå justeringer.
+90. Raadgav om Streamlit Cloud-fejlen: manglede plotly, fordi kun rodfilen installeres; anbefalede at oprette requirements.txt i roden (evt. med -r python/requirements.txt) inden redeploy.
+91. Flyttede Python-kravene til rodfilen, fjernede python/requirements.txt, opdaterede README-stien og ajourfoerte prompt-loggene.

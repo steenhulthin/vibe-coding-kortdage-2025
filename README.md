@@ -17,7 +17,7 @@ Dette repository samler alt materiale til Kortdage-oplægget om vibe coding og A
    ```powershell
    python -m venv .venv
    .\.venv\Scripts\Activate.ps1
-   pip install -r python\requirements.txt
+   pip install -r requirements.txt
    ```
 2. Datafiler ligger i `python/data/` (OWID, SSI, osv.). Eksterne filer hentes via scripts eller er checket ind som placeholders.
 3. Agent- og promptloggene beskriver øvrige arbejdsgange og beslutninger.

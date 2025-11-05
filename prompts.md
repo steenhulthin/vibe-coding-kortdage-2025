@@ -1122,3 +1122,47 @@ User:
 Ser det realistisk ud med præsentationen på  20 minutter?
 Assistant:
 Vurderer tidsforbruget slide for slide og kommer med forslag til, hvordan du kan holde dig inden for 20 minutter (evt. samle eller stramme enkelte sektioner).
+User:
+# Context from my IDE setup:
+
+## Active file: python/requirements.txt
+
+## Open tabs:
+- prompts.md: prompts.md
+- LICENSE: LICENSE
+- agents.md: agents.md
+- abstract.md: abstract.md
+- requirements.txt: python/requirements.txt
+- app.py: python/streamlit_app/app.py
+- todo.md: todo.md
+- praesentation.md: praesentation.md
+- README.md: README.md
+- pros_cons.md: pros_cons.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+I get this log in the streamlit.app site. It runs fine locally. Do I need to something different to make the requirements installed?
+Assistant:
+Forklarede at Streamlit Cloud kun installerer afhængigheder fra en rodfil, anbefalede at tilføje `requirements.txt` i roden (evt. med `-r python/requirements.txt`) før redeploy, og noterede at logfilerne ikke kunne opdateres i read-only sessionen.
+User:
+# Context from my IDE setup:
+
+## Active file: python/requirements.txt
+
+## Open tabs:
+- prompts.md: prompts.md
+- LICENSE: LICENSE
+- agents.md: agents.md
+- abstract.md: abstract.md
+- requirements.txt: python/requirements.txt
+- app.py: python/streamlit_app/app.py
+- todo.md: todo.md
+- praesentation.md: praesentation.md
+- README.md: README.md
+- pros_cons.md: pros_cons.md
+- prompts2codex.md: prompts2codex.md
+
+## My request for Codex:
+I stopped debugging, so you should be able to write now. I would prefer to only have one requirements file. Can you move it to the root and make sure that other references to the requirements file are updated. 
+Assistant:
+Flyttede Python-afhængighederne til rodfilen `requirements.txt`, fjernede `python/requirements.txt`, opdaterede README'et til at bruge den nye sti og ajourførte promptloggene.
