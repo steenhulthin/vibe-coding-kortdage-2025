@@ -203,3 +203,8 @@ a:focus {
     padding: 2rem 1.5rem;
   }
 }
+.card .card-note {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}

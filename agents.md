@@ -15,6 +15,7 @@
 - Opdater `prompts.md` og `prompts2codex.md` ved hvert svar.
 - Giv aldrig forslag til tøj eller påklædning.
 - ArcGIS-arbejde skal som udgangspunkt løses med ArcGIS API for Python og bruge Living Atlas for geografiske datasæt, når det er muligt.
+- Når PowerPoint-præsentationen opdateres (commit/push), skal linket i `docs/index.html` peges på den nye rå filversion.
 
 ## Kontekst (pin/copy til AI-chat)
 - Rod: `arcgis/`, `powerbi/`, `python/` (3 platforme)

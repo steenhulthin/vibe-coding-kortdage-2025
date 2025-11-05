@@ -1195,3 +1195,16 @@ User:
 Kan du klare todo nummer 10 i todo.md? I samme omgang må du gerne også fikse link til readme.md i docs/index.html . readme.md skal blive i roden, så du kan linke til raw fx (eller på anden måde). Det kunne være fint hvis markup bliver taget med, men det vigtigste er at stilen fra index.html så vidt muligt følges. 
 Assistant:
 Tjekkede TODO-listen og markerede punkt 10 som løst ved at linke Shiny-kortet på forsiden til shinyapps.io, tilføjede et fallback-link til Shinylive-versionen, udvidede README med hostede dashboard-instrukser inkl. `rsconnect`-deploy, oprettede `docs/readme.html` som henter den rå README via Marked og opdaterede forsiden til at pege på den nye side.
+User:
+# Context from my IDE setup:
+
+## Active file: todo.md
+
+## Open tabs:
+- todo.md: todo.md
+- Vibe coding og AI-assisteret udvikling af geodata-dashboards - Steen Hulthin Rasmussen - SSI - 14.11.2025.pptx: Vibe coding og AI-assisteret udvikling af geodata-dashboards - Steen Hulthin Rasmussen - SSI - 14.11.2025.pptx
+
+## My request for Codex:
+Jeg har tilføjet en powerpoint præsentation. jeg vil gerne have den tilføjet til docs/index.html med følgende link: https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/steenhulthin/vibe-coding-kortdage-2025/raw/2d1d7cc5d9d6a69d3e65a0fe20cd9cb8587ad59e/Vibe%20coding%20og%20AI-assisteret%20udvikling%20af%20geodata-dashboards%20-%20Steen%20Hulthin%20Rasmussen%20-%20SSI%20-%2014.11.2025.pptx . Dette link skal løbende opdateres, når der bliver committed/pushed nye versioner af powerpoint filen (denne regel skal skrives ind i agents.md filen).
+Assistant:
+Tilføjede et nyt kort på forsiden med Office Viewer-linket til præsentationen inkl. en påmindelse om at holde URL'en ajour, gav kortene en note-stil, opdaterede `agents.md` med reglen om at vedligeholde linket, og sørgede for at logge ændringen.

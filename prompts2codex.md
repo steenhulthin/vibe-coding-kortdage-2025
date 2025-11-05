@@ -93,3 +93,4 @@
 91. Flyttede Python-kravene til rodfilen, fjernede python/requirements.txt, opdaterede README-stien og ajourfoerte prompt-loggene.
 92. Fjernede stlite-løsningen ved at lade docs/streamlit.html viderestille til Streamlit Cloud og opdaterede forsiden og README til at linke dertil.
 93. Loeste TODO 10 ved at linke forsiden til shinyapps.io, bevare Shinylive fallback, tilfoeje deploy-instruks i README og bygge docs/readme.html med automatisk markdown-rendering.
+94. Tilfoejet PowerPoint-kort med Office Viewer-link, paafoert note om at opdatere URL og indskrev reglen i agents.md.
