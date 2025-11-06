@@ -1208,3 +1208,34 @@ User:
 Jeg har tilføjet en powerpoint præsentation. jeg vil gerne have den tilføjet til docs/index.html med følgende link: https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/steenhulthin/vibe-coding-kortdage-2025/raw/2d1d7cc5d9d6a69d3e65a0fe20cd9cb8587ad59e/Vibe%20coding%20og%20AI-assisteret%20udvikling%20af%20geodata-dashboards%20-%20Steen%20Hulthin%20Rasmussen%20-%20SSI%20-%2014.11.2025.pptx . Dette link skal løbende opdateres, når der bliver committed/pushed nye versioner af powerpoint filen (denne regel skal skrives ind i agents.md filen).
 Assistant:
 Tilføjede et nyt kort på forsiden med Office Viewer-linket til præsentationen inkl. en påmindelse om at holde URL'en ajour, gav kortene en note-stil, opdaterede `agents.md` med reglen om at vedligeholde linket, og sørgede for at logge ændringen.
+User:
+# Context from my IDE setup:
+
+## Active file: python/data/geo/denmark_regions_simple.geojson
+
+## Open tabs:
+- todo.md: todo.md
+- denmark_regions_simple.geojson: python/data/geo/denmark_regions_simple.geojson
+- denmark_regions.geojson: python/data/geo/denmark_regions.geojson
+- regioner_simplified.geojson: python/data/geo/regioner_simplified.geojson
+
+## My request for Codex:
+Jeg er opdateret denmark_regions.geojson. vil du erstatte referencer til denmark_regions.geojson med den opdaterede geojson fil?
+Assistant:
+Opdaterede python/utils/geo.py til at pege på denmark_regions_simple.geojson, justerede prompt-loggen så den nævner den simple fil, og noterede ændringen i både prompts2codex.md og prompts.md.
+User:
+# Context from my IDE setup:
+
+## Active file: python/utils/geo.py
+
+## Open tabs:
+- todo.md: todo.md
+- denmark_regions_simple.geojson: python/data/geo/denmark_regions_simple.geojson
+- geo.py: python/utils/geo.py
+- denmark_regions.geojson: python/data/geo/denmark_regions.geojson
+- regioner_simplified.geojson: python/data/geo/regioner_simplified.geojson
+
+## My request for Codex:
+Jeg har brug for at denmark_regions.geojson bliver brugt i kortene. 
+Assistant:
+Opdaterede Dash- og Shiny-appene til at læse denmark_regions.geojson, rettede Shiny-exporten og satte utils-scriptet til at regenerere samme fil.

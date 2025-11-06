@@ -44,7 +44,7 @@
 42. Der vises en bounding box i Dash efter simplificering - juster simplificeringen så polygonerne bevares.
 43. Rul tilbage til den simple geojson i Dash, men gem begge nye geojson-filer.
 44. Brug regioner_simplified.geojson igen (den skal matche SSI-data og ikke vise bounding box).
-45. Lav en denmark_regions.geojson med samme struktur som den simple fil men med geometrier fra regioner_simplified, og brug den i Dash.
+45. Lav en denmark_regions_simple.geojson med samme struktur som den simple fil men med geometrier fra regioner_simplified, og brug den i Dash.
 46. Jeg vil gerne have noget, hvor et kort over data er det centrale.
 47. Det lyder godt, generér koden.
 48. Husk også at opdatere prompts2codex.md filen.
@@ -94,3 +94,5 @@
 92. Fjernede stlite-løsningen ved at lade docs/streamlit.html viderestille til Streamlit Cloud og opdaterede forsiden og README til at linke dertil.
 93. Loeste TODO 10 ved at linke forsiden til shinyapps.io, bevare Shinylive fallback, tilfoeje deploy-instruks i README og bygge docs/readme.html med automatisk markdown-rendering.
 94. Tilfoejet PowerPoint-kort med Office Viewer-link, paafoert note om at opdatere URL og indskrev reglen i agents.md.
+95. Erstattede denmark_regions.geojson-referencer med den opdaterede denmark_regions_simple.geojson i værktøj og dokumentation.
+96. Skiftede kortapplikationerne tilbage til denmark_regions.geojson og opdaterede helper-scriptet samt Shiny-exporten.
