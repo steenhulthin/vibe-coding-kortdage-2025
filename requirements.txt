@@ -4,3 +4,4 @@ dash>=2.17
 streamlit>=1.37
 shiny>=0.7
 shinywidgets>=0.3
+gunicorn==20.1.0
