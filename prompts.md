@@ -1265,3 +1265,22 @@ User:
 weird. Can you try writing it now?
 Assistant:
 Bekræftede, at skriveadgang var aktiv igen, genoprettede `docs/index.html` med HTML-entiteter for danske tegn og lagde ændringen ind i prompt-loggene.
+User:
+# Context from my IDE setup:
+
+## Active file: praesentation.md
+
+## Open tabs:
+- todo.md: todo.md
+- praesentation.md: praesentation.md
+
+## My request for Codex:
+Lad os lige få helt styr på det ghpages. 
+1. på forsiden index.html skal der tilføjes et github icon med link til det bagvedliggende github site. 
+2. Der skal stå, at det er en SSI præsentation af steen hulthin (indsæt linkedin profil link)
+3. på Powerpoint-præsentation cardet skal bare hedde præsentation og have link til poiwerpoint (som nu) og videoen af præsentationen (.mp4 filen)
+4. links på cards skal åbnes på konsistent måde - helst i ny tab
+5. Alle cards skal åbne en ny side - lav sider til powerbi, Bonusmaterialer og andre der måtte mangle en egen side. 
+6. præsentationsoutline cardet skal fjernes
+Assistant:
+Udvidede forsiden med GitHub-ikon og LinkedIn-kreditering, omdannede kortlayoutet så Præsentation-siden dækker både slides og video, ensrettede alle CTA-links til nye undersider (Dash, Shiny, Power BI, Bonus og præsentationsressourcer), og fjernede outline-kortet, mens eksisterende sider fik lov at åbne i nye faner.

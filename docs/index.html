@@ -9,6 +9,55 @@
   <body>
     <header class="site-header">
       <div class="inner">
+        <div
+          class="hero-meta"
+          style="
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+          "
+        >
+          <p class="meta" style="margin: 0">
+            En SSI-pr&aelig;sentation af
+            <a
+              href="https://www.linkedin.com/in/steenhulthin/"
+              target="_blank"
+              rel="noopener"
+              >Steen Hulthin</a
+            >
+          </p>
+          <p class="meta" style="margin: 0">
+            <a
+              class="github-link"
+              href="https://github.com/steenhulthin/vibe-coding-kortdage-2025"
+              target="_blank"
+              rel="noopener"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: rgba(255, 255, 255, 0.85);
+                text-decoration: none;
+              "
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                width="20"
+                height="20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.7 7.7 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+                />
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </p>
+        </div>
         <h1>Vibe coding - COVID-19 dashboards til Kortdage 2025</h1>
         <p>
           Samling af demoer, pr&aelig;sentationsmateriale og v&aelig;rkt&oslash;jsnoter til
@@ -20,34 +69,26 @@
     <main class="content">
       <section class="card-grid">
         <article class="card">
-          <h2>PowerPoint-pr&aelig;sentation</h2>
+          <h2>Pr&aelig;sentation</h2>
           <p>
-            Se den nyeste PowerPoint-version direkte i browseren via Microsoft Office
-            Viewer.
+            Tilg&aring; slides og videooptagelse fra opl&aelig;gget samlet p&aring; samme side.
           </p>
           <a
             class="cta"
-            href="https://view.officeapps.live.com/op/embed.aspx?src=https://github.com/steenhulthin/vibe-coding-kortdage-2025/raw/2d1d7cc5d9d6a69d3e65a0fe20cd9cb8587ad59e/Vibe%20coding%20og%20AI-assisteret%20udvikling%20af%20geodata-dashboards%20-%20Steen%20Hulthin%20Rasmussen%20-%20SSI%20-%2014.11.2025.pptx"
+            href="praesentation-resurser.html"
             target="_blank"
             rel="noopener"
-            >&Aring;bn PowerPoint</a
+            >&Aring;bn pr&aelig;sentationssiden</a
           >
-          <p class="card-note">
-            <strong>NB:</strong> Opdater linket ved hver ny commit af pr&aelig;sentationen.
-          </p>
         </article>
         <article class="card">
           <h2>Streamlit-demo</h2>
           <p>
-            Global COVID-19-oversigt bygget med vibe coding i Streamlit og hostet p&aring;
-            Streamlit Cloud.
+            F&aring; et globalt overblik i Streamlit-versionen og se, hvordan prompt-workflowet
+            binder data og UI sammen.
           </p>
-          <a
-            class="cta"
-            href="https://vibe-coding-kortdage-2025.streamlit.app/"
-            target="_blank"
-            rel="noopener"
-            >&Aring;bn Streamlit-dashboard</a
+          <a class="cta" href="streamlit.html" target="_blank" rel="noopener"
+            >&Aring;bn Streamlit-siden</a
           >
         </article>
         <article class="card">
@@ -56,12 +97,8 @@
             KPI-oversigten er klar i Dash, men hosting er endnu ikke sat op. Brug
             billedlinket for at se den seneste version.
           </p>
-          <a
-            class="cta"
-            href="https://raw.githubusercontent.com/steenhulthin/vibe-coding-kortdage-2025/main/assests_praesentation/dash_demo.png"
-            target="_blank"
-            rel="noopener"
-            >Vis Dash-screenshot</a
+          <a class="cta" href="dash.html" target="_blank" rel="noopener"
+            >&Aring;bn Dash-siden</a
           >
           <p class="card-note">
             <strong>Status:</strong> Hosting afventer.
@@ -73,16 +110,9 @@
             Interaktivt Danmark-kort og tidsserie. V&aelig;lg cloud-versionen for live data
             eller pr&oslash;v Shinylive-kopien i repoet.
           </p>
-          <a
-            class="cta"
-            href="https://steenhulthin.shinyapps.io/covid-19-regionalt-overblik/"
-            target="_blank"
-            rel="noopener"
-            >&Aring;bn Shiny-dashboard</a
+          <a class="cta" href="shiny.html" target="_blank" rel="noopener"
+            >&Aring;bn Shiny-siden</a
           >
-          <p>
-            <a href="shiny_app/index.html">Vis Shinylive-versionen i dette repo</a>
-          </p>
         </article>
         <article class="card">
           <h2>ArcGIS webscene</h2>
@@ -90,7 +120,9 @@
             3D-visualisering af de nordiske KPI'er med tidsregulator og Living
             Atlas-baggrund.
           </p>
-          <a class="cta" href="scene.html">Vis ArcGIS-scenen</a>
+          <a class="cta" href="scene.html" target="_blank" rel="noopener"
+            >&Aring;bn ArcGIS-siden</a
+          >
         </article>
         <article class="card">
           <h2>Power BI-rapport</h2>
@@ -98,12 +130,8 @@
             Preview af Power BI-l&oslash;sningen. Hosting var ikke mulig i denne omgang, s&aring;
             der linkes til et screenshot.
           </p>
-          <a
-            class="cta"
-            href="https://raw.githubusercontent.com/steenhulthin/vibe-coding-kortdage-2025/main/assests_praesentation/powerbi_demo.png"
-            target="_blank"
-            rel="noopener"
-            >Vis Power BI-screenshot</a
+          <a class="cta" href="powerbi.html" target="_blank" rel="noopener"
+            >&Aring;bn Power BI-siden</a
           >
           <p class="card-note">
             <strong>Status:</strong> Ingen hostet version.
@@ -111,54 +139,21 @@
         </article>
         <article class="card">
           <h2>Bonusmaterialer</h2>
-          <p>Ekstra ressourcer fra demoerne.</p>
-          <ul>
-            <li>
-              <a
-                href="https://raw.githubusercontent.com/steenhulthin/vibe-coding-kortdage-2025/main/gif_examples/AlderApp.ps1"
-                target="_blank"
-                rel="noopener"
-                >PowerShell: AlderApp</a
-              >
-              &mdash;
-              <a
-                href="https://raw.githubusercontent.com/steenhulthin/vibe-coding-kortdage-2025/main/assests_praesentation/AlderApp.gif"
-                target="_blank"
-                rel="noopener"
-                >AlderApp.gif</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://raw.githubusercontent.com/steenhulthin/vibe-coding-kortdage-2025/main/gif_examples/beregn_hundealder.ps1"
-                target="_blank"
-                rel="noopener"
-                >PowerShell: beregn_hundealder</a
-              >
-              &mdash;
-              <a
-                href="https://raw.githubusercontent.com/steenhulthin/vibe-coding-kortdage-2025/main/assests_praesentation/beregn_hundealder.gif"
-                target="_blank"
-                rel="noopener"
-                >hunde_alder.gif</a
-              >
-            </li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Pr&aelig;sentationsoutline</h2>
           <p>
-            Gennemg&aring; slides og manus direkte fra markdown-kilden. Siden opdateres
-            automatisk med den nyeste version af <code>praesentation.md</code>.
+            Ekstra ressourcer fra demoerne, herunder PowerShell-scripts og GIF-eksempler.
           </p>
-          <a class="cta" href="praesentation.html">&Aring;bn pr&aelig;sentationen</a>
+          <a class="cta" href="bonus.html" target="_blank" rel="noopener"
+            >&Aring;bn bonusmaterialer</a
+          >
         </article>
         <article class="card">
           <h2>Bagvedliggende noter</h2>
           <p>
             Dokumentation, scripts og ekstra referencer til demoerne.
           </p>
-          <a class="cta" href="readme.html">L&aelig;s dokumentationen</a>
+          <a class="cta" href="readme.html" target="_blank" rel="noopener"
+            >&Aring;bn dokumentationen</a
+          >
         </article>
       </section>
     </main>
