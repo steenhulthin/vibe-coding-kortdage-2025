@@ -96,3 +96,5 @@
 94. Tilfoejet PowerPoint-kort med Office Viewer-link, paafoert note om at opdatere URL og indskrev reglen i agents.md.
 95. Erstattede denmark_regions.geojson-referencer med den opdaterede denmark_regions_simple.geojson i værktøj og dokumentation.
 96. Skiftede kortapplikationerne tilbage til denmark_regions.geojson og opdaterede helper-scriptet samt Shiny-exporten.
+97. Omstrukturerede docs/index.html: PowerPoint-kort først, derefter Streamlit, Dash (screenshot), Shiny, ArcGIS, Power BI (screenshot) og et bonuskort med PowerShell-scripts plus GIF-links.
+98. Genetablerede docs/index.html med HTML-entiteter for danske tegn efter skriveadgang blev bekræftet og loggede ændringen.
