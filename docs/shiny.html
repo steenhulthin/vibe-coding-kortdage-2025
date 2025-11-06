@@ -1,70 +1,45 @@
 <!DOCTYPE html>
 <html lang="da">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Shiny-demo - Kortdage 2025</title>
-    <link rel="stylesheet" href="assets/css/ssi-theme.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="inner">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shiny-demo - Kortdage 2025</title>
+  <link rel="stylesheet" href="assets/css/ssi-theme.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <p>
+        <a href="index.html" style="color: rgba(255, 255, 255, 0.8)">&larr; Tilbage til forsiden</a>
+      </p>
+      <h1>Shiny-demo</h1>
+      <p>
+        Udforsk Danmark-kortet og tidsserien i Shiny. V&aelig;lg cloud-udgaven for live
+        data eller Shinylive-versionen for en bundlet offline-demo.
+      </p>
+    </div>
+  </header>
+  <main class="content">
+    <section class="card-grid single-column">
+      <article class="card">
+        <h2>Shinyapps.io</h2>
         <p>
-          <a href="index.html" style="color: rgba(255, 255, 255, 0.8)"
-            >&larr; Tilbage til forsiden</a
-          >
+          Live-versionen k&oslash;rer hos shinyapps.io med adgang til seneste data.
         </p>
-        <h1>Shiny-demo</h1>
+        <a class="cta" href="https://steenhulthin.shinyapps.io/covid-19-regionalt-overblik/" target="_blank"
+          rel="noopener">&Aring;bn cloud-dashboardet</a>
+      </article>
+      <article class="card">
+        <h2>Shinylive i repoet</h2>
         <p>
-          Udforsk Danmark-kortet og tidsserien i Shiny. V&aelig;lg cloud-udgaven for live
-          data eller Shinylive-versionen for en bundlet offline-demo.
+          Denne version er bundlede data og k&oslash;rer direkte fra GitHub Pages.
         </p>
-      </div>
-    </header>
-    <main class="content">
-      <section class="card-grid single-column">
-        <article class="card">
-          <h2>Shinyapps.io</h2>
-          <p>
-            Live-versionen k&oslash;rer hos shinyapps.io med adgang til seneste data.
-          </p>
-          <a
-            class="cta"
-            href="https://steenhulthin.shinyapps.io/covid-19-regionalt-overblik/"
-            target="_blank"
-            rel="noopener"
-            >&Aring;bn cloud-dashboardet</a
-          >
-        </article>
-        <article class="card">
-          <h2>Shinylive i repoet</h2>
-          <p>
-            Denne version er bundlede data og k&oslash;rer direkte fra GitHub Pages.
-          </p>
-          <a
-            class="cta"
-            href="shiny_app/index.html"
-            target="_blank"
-            rel="noopener"
-            >&Aring;bn Shinylive-udgaven</a
-          >
-        </article>
-        <article class="card">
-          <h2>Preview</h2>
-          <p>Snapshot fra Shinylive-buildet.</p>
-          <a
-            href="https://raw.githubusercontent.com/steenhulthin/vibe-coding-kortdage-2025/main/assests_praesentation/shiny_demo.png"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src="https://raw.githubusercontent.com/steenhulthin/vibe-coding-kortdage-2025/main/assests_praesentation/shiny_demo.png"
-              alt="Shiny-dashboard screenshot"
-              style="width: 100%; border-radius: 0.5rem"
-            />
-          </a>
-        </article>
-      </section>
-    </main>
-  </body>
+        <a class="cta" href="shiny_app/index.html" target="_blank" rel="noopener">&Aring;bn Shinylive-udgaven</a>
+      </article>
+    </section>
+  </main>
+</body>
+
 </html>
